@@ -38,7 +38,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 55px;
 
 }
 
@@ -218,6 +218,8 @@ main img {
     --heading-font-size-m: 30px;
     --heading-font-size-s: 24px;
     --heading-font-size-xs: 22px;  
+
+    --nav-height: 105px;
   }
   
   .section > div {

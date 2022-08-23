@@ -25,32 +25,29 @@ export default async function decorate(block) {
   const resp = await fetch(`${navPath}.plain.html`);
   if (resp.ok) {
     const html = await resp.text();
+    const parser = new DOMParser();
+    const navdoc = parser.parseFromString(html, 'text/html');
+    const navsections = Array.from(navdoc.querySelectorAll('body > div'));
+
+    const nav = document.createElement('nav');
+    const logo = document.createElement('div');
+    logo.className = 'logo';
 
     // decorate nav DOM
-    const nav = document.createElement('nav');
-    nav.innerHTML = html;
-    decorateIcons(nav);
-
-    const classes = ['brand', 'sections', 'tools'];
-    classes.forEach((e, j) => {
-      const section = nav.children[j];
-      if (section) section.classList.add(`nav-${e}`);
+    navsections.forEach((section) => {
+      if (section.querySelector('ul')) {
+        nav.innerHTML += section.innerHTML;
+      } else {
+        const a = section.querySelector('a');
+        const icon = section.querySelector('picture');
+        a.innerHTML = icon.outerHTML;
+        logo.appendChild(a);
+      }
     });
 
-    const navSections = [...nav.children][1];
-    if (navSections) {
-      navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
-        if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-        navSection.addEventListener('click', () => {
-          const expanded = navSection.getAttribute('aria-expanded') === 'true';
-          collapseAllNavSections(navSections);
-          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        });
-      });
-    }
-
     // hamburger for mobile
-    const hamburger = document.createElement('div');
+    const hamburger = document.createElement('a');
+    hamburger.href = '#';
     hamburger.classList.add('nav-hamburger');
     hamburger.innerHTML = '<div class="nav-hamburger-icon"></div>';
     hamburger.addEventListener('click', () => {
@@ -58,9 +55,8 @@ export default async function decorate(block) {
       document.body.style.overflowY = expanded ? '' : 'hidden';
       nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
     });
-    nav.prepend(hamburger);
-    nav.setAttribute('aria-expanded', 'false');
-    decorateIcons(nav);
-    block.append(nav);
+    block.appendChild(logo);
+    block.appendChild(hamburger);
+    block.appendChild(nav);
   }
 }
