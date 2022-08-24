@@ -57,7 +57,7 @@ body.appear {
 }
 
 header {
-  height: var(--nav-height);
+  height: calc(var(--nav-height) * 2);
 }
 
 h1, h2, h3,

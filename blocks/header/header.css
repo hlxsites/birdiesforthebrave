@@ -66,3 +66,18 @@ header nav[aria-expanded="true"] {
   z-index: 1;
   padding: 5px;
 }
+
+header::after {
+  content: "★ Honor being honorable ★";
+  display: block;
+  height: var(--nav-height);
+  width: 100%;
+  background-color: var(--overlay-background-color);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--background-color);
+  /* vertical text alignment: center */
+  line-height: var(--nav-height);
+  font-weight: bold;
+  font-size: var(--body-font-size-xs);
+}
