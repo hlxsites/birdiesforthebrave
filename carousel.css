@@ -1,0 +1,701 @@
+main .carousel-container {
+  padding: 0;
+}
+
+main .carousel-wrapper {
+  position: relative;
+  max-width: 1400px;
+}
+
+main .carousel {
+  display: flex;
+  font-family: var(--heading-font-family);
+  text-transform: uppercase;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+}
+
+main .carousel h2 {
+  color: var(--color-white);
+  font-size: var(--heading-font-size-l);
+  font-weight: 400;
+  line-height: .8;
+  text-shadow: 0 0 10px #0008;
+}
+
+@media (min-width: 700px) {
+  main .carousel h2 {
+    font-size: var(--heading-font-size-xxl);
+  }
+}
+
+@media (min-width: 900px) {
+  main .carousel h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+@media (min-width: 1200px) {
+  main .carousel h2 {
+    font-size: var(--heading-font-size-xxl);
+  }
+}
+
+main .carousel a:any-link {
+  color: var(--color-white);
+}
+
+main .carousel a:hover {
+  text-decoration: none;
+}
+
+main .carousel picture {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+main .carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* carousel slide */
+main .carousel > div {
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background-image: linear-gradient(#0002, #0006);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 700px) {
+  main .carousel > div {
+    height: calc(100vh - 10px - var(--nav-height));
+    min-height: 420px;
+  }
+}
+
+@media (min-width: 900px) {
+  main .carousel > div {
+    height: 600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  main .carousel > div {
+    height: 700px;
+  }
+}
+
+
+main .carousel div.carousel-image {
+  line-height: 0;
+}
+
+main .carousel div.carousel-text {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 10px;
+  color: var(--color-white);
+}
+
+main .carousel div.carousel-text h2 {
+  flex-basis: 100%;
+}
+
+@media (min-width: 700px) {
+  main .carousel div.carousel-text {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 900px) {
+  main .carousel div.carousel-text {
+    justify-content: flex-end;
+  }
+
+  main .carousel div.carousel-text h2 {
+    margin-right: 30%;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  main .carousel div.carousel-text {
+    padding: 0 60px;
+  }
+}
+
+/* carousel content buttons */
+main .carousel p.button-container {
+  margin: 5px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+main .carousel a.button {
+  min-width: 115px;
+  color: var(--color-white);
+  font-family: var(--body-font-family);
+}
+
+main .carousel a.button:hover {
+  filter: brightness(.85);
+}
+
+main .carousel a.button.primary:any-link {
+  border-color: transparent;
+  background-color: var(--color-tan-95);
+  font-size: var(--body-font-size-xs);
+}
+
+main .carousel a.button.secondary:any-link {
+  background-color: var(--color-blue);
+  font-size: var(--body-font-size-xs);
+}
+
+@media (min-width: 700px) {
+  main .carousel a.button {
+    min-width: 200px;
+  }
+
+  main .carousel a.button.primary:any-link,
+  main .carousel a.button.secondary:any-link {
+    font-size: var(--body-font-size-l);
+  }
+}
+
+@media (min-width: 900px) {
+  main .carousel p.button-container {
+    margin-left: 70%;
+  }
+
+  main .carousel a.button {
+    min-width: 300px;
+    margin: 0;
+  }
+
+  main .carousel p.button-container  {
+    text-align: right;
+  }
+
+  main .carousel a.button.primary:any-link,
+  main .carousel a.button.secondary:any-link {
+    font-size: var(--body-font-size-xxl);
+  }
+}
+
+main .carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* carousel nav buttons */
+main .carousel-wrapper .carousel-buttons {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+  text-align: center;
+  z-index: 1;
+}
+
+main .carousel-buttons button {
+  display: block;
+  height: 12px;
+  width: 12px;
+  margin: 10px 8px;
+  padding: 0;
+  border: 1px solid;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+main .carousel-buttons button.selected {
+  background-color: currentColor;
+}
+
+/* course carousel */
+main .carousel.course > div {
+  flex-direction: column;
+  height: 850px;
+  background-color: var(--color-blue);
+  background-image: unset;
+}
+
+@media (min-width: 700px) {
+  main .carousel.course > div {
+    height: 670px;
+  }
+}
+
+@media (min-width: 900px) {
+  main .carousel.course > div {
+    height: 505px;
+  }
+}
+
+@media (min-width: 1200px) {
+  main .carousel.course > div {
+    height: 740px;
+  }
+}
+
+main .carousel.course picture {
+  z-index: 1;
+}
+
+main .carousel.course div.carousel-image {
+  flex-grow: 1;
+  position: relative;
+}
+
+main .carousel.course div.course-text {
+  align-items: stretch;
+  margin: unset;
+  margin-bottom: 22px; /* for navigation */
+  padding: 16px;
+  background-color: var(--color-blue);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xxs);
+  text-transform: initial;
+}
+
+@media (min-width: 700px) {
+  main .carousel.course div.course-text {
+    display: grid; 
+    grid-template-columns: 1fr 240px; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 8px 16px; 
+    grid-template-areas: 
+      'overview stats'
+      'credits stats'; 
+    height: 272px;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  main .carousel.course div.course-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 300px;
+    height: 473px;
+    background-color: var(--color-blue-95);
+    z-index: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  main .carousel.course div.course-text {
+    justify-content: flex-start;
+    top: 32px;
+    right: 32px;
+    height: 676px;
+  }
+}
+
+main .carousel.course div.course-text h2,
+main .carousel.course div.course-text h3 {
+  margin: 0;
+  color: var(--color-white);
+  font-family: var(--body-font-family);
+}
+
+main .carousel.course div.course-text h2 {
+  font-size: var(--heading-font-size-s);
+}
+
+main .carousel.course div.course-text h3 {
+  font-size: var(--heading-font-size-xs);
+  text-transform: initial;
+}
+
+@media (min-width: 700px) {
+  main .carousel.course div.course-text h2 {
+    font-size: var(--heading-font-size-l);
+  }
+  
+  main .carousel.course div.course-text h3 {
+    font-size: var(--heading-font-size-xxs);
+  }
+}
+
+main .carousel.course div.course-text p {
+  margin: 0;
+}
+
+/* overview */
+@media (min-width: 700px) {
+  main .carousel.course div.course-text .course-overview {
+    grid-area: overview;
+    display: grid;
+    grid-auto-columns: 1fr; 
+    grid-template-columns: max-content 1fr; 
+    grid-template-rows: 45px 30px 132px; 
+    gap: 0 16px; 
+    grid-template-areas: 
+      'overview-title hole'
+      'overview-subtitle hole'
+      'description description'; 
+      max-height: 242px;
+  }
+
+  main .carousel.course div.course-text .course-overview h2 {
+    grid-area: overview-title;
+    align-self: center;
+  }
+
+  main .carousel.course div.course-text .course-overview h3 {
+    grid-area: overview-subtitle;
+  }
+
+  main .carousel.course div.course-text .course-hole {
+    align-self: center;
+  }
+
+  main .carousel.course div.course-text .course-hole picture {
+    grid-area: hole;
+  }
+
+  main .carousel.course div.course-text .course-overview p:last-child {
+    grid-area: description;
+    box-sizing: border-box;
+    overflow-y: auto;
+    max-height: 362px;
+    padding-right: 8px;
+    font-size: var(--body-font-size-xs);
+  }
+}
+
+@media (min-width: 900px) {
+  main .carousel.course div.course-text .course-overview {
+    grid-template-rows: 45px 30px 156px; 
+    margin-bottom: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  main .carousel.course div.course-text .course-overview {
+    flex-grow: 1;
+    grid-template-rows: 45px 30px 1fr; 
+    max-height: unset;
+  }
+}
+
+main .carousel.course div.course-text .course-hole picture {
+  display: none;
+  visibility: hidden;
+  position: initial;
+}
+
+main .carousel.course div.course-text .course-hole img {
+  width: unset;
+  max-width: 150px;
+  height: unset;
+  margin: 0;
+}
+
+@media (min-width: 700px) {
+  main .carousel.course div.course-text .course-hole picture {
+    display: block;
+    visibility: visible;
+  }
+}
+
+@media (min-width: 900px) {
+  main .carousel.course div.course-text .course-hole picture img {
+    max-width: 100%;
+  }
+}
+
+/* stats */
+main .carousel.course div.course-text .course-statistics {
+  grid-area: stats;
+  display: none;
+  visibility: hidden;
+}
+
+main .carousel.course div.course-text .course-statistics h3 {
+  border-bottom: 1px solid #fff4;
+  padding-bottom: 8px;
+  font-size: var(--heading-font-size-l);
+}
+
+main .carousel.course div.course-text .course-statistics .course-avg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  outline: 3px solid var(--color-white);
+  border: 3px solid var(--color-blue);
+  border-radius: 50%;
+  padding: 16px;
+  background-color: var(--color-white);
+  color: var(--color-blue);
+  font-size: var(--body-font-size-xl);
+  line-height: 1;
+  text-align: center;
+}
+
+main .carousel.course div.course-text .course-statistics .course-avg strong {
+  display: block;
+  font-size: var(--body-font-size-xxs);
+  font-weight: normal;
+}
+
+main .carousel.course div.course-text .course-statistics table {
+  align-self: flex-start;
+}
+
+main .carousel.course div.course-text .course-statistics table tr td.course-stat-graph {
+  width: 42%;
+  padding-right: 4px;
+}
+
+main .carousel.course div.course-text .course-statistics table tr.course-eagle .course-stat-bar {
+  background-color: #1c619b;
+}
+
+main .carousel.course div.course-text .course-statistics table tr.course-birdie .course-stat-bar {
+  background-color: #99d9f4;
+}
+
+main .carousel.course div.course-text .course-statistics table tr.course-par .course-stat-bar {
+  background-color: #a2a7ab;
+}
+
+main .carousel.course div.course-text .course-statistics table tr.course-bogey .course-stat-bar {
+  background-color: #f7b941;
+}
+
+main .carousel.course div.course-text .course-statistics table tr.course-2--bogey .course-stat-bar {
+  background-color: #ee5a00;
+}
+
+main .carousel.course div.course-text .course-statistics table tr td.course-stat-graph .course-stat-bar {
+  float: right;
+  height: 14px;
+}
+
+main .carousel.course div.course-text .course-statistics table tr td.course-stat-percent {
+  padding-right: 4px;
+  text-align: right;
+}
+
+main .carousel.course div.course-text .course-statistics table tr td.course-stat-title {
+  color: var(--color-gray);
+}
+
+@media (min-width: 700px) {
+  main .carousel.course div.course-text .course-statistics {
+    display: grid;
+    grid-template-columns: max-content 1fr; 
+    grid-template-rows: max-content 1fr; 
+    gap: 16px; 
+    grid-template-areas: 
+      'statistics-title statistics-title'
+      'avg stats'; 
+    visibility: visible;
+  }
+
+  main .carousel.course div.course-text .course-statistics h3 {
+    grid-area: statistics-title;
+  }
+
+  main .carousel.course div.course-text .course-statistics .course-avg {
+    grid-area: avg;
+  }
+
+  main .carousel.course div.course-text .course-statistics table {
+    grid-area: stats;
+  }
+}
+
+@media (min-width: 900px) {
+  main .carousel.course div.course-text .course-statistics {
+    gap: 0 16px;
+    border-top: 3px solid var(--color-white);
+    padding-top: 16px;
+  }
+
+  main .carousel.course div.course-text .course-statistics h3 {
+    display: none;
+    visibility: hidden;
+  }
+
+  main .carousel.course div.course-text .course-statistics table tr td.course-stat-graph {
+    width: 52%;
+  }
+  
+}
+
+/* credits */
+main .carousel.course div.course-text .course-credits {
+  grid-area: credits;
+  width: 100%;
+  border-top: 1px solid #fff8;
+  padding: 5px 0;
+  font-style: normal;
+  text-align: right;
+}
+
+main .carousel.course div.course-text .course-credits em {
+  font-style: normal;
+}
+
+@media (min-width: 700px) {
+  main .carousel.course div.course-text .course-credits {
+    border-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  main .carousel.course div.course-text .course-credits {
+    border-top: 1px solid #fff8;
+    padding-top: 16px;
+  }
+}
+
+/* nav buttons */
+main .carousel-buttons.course-buttons button {
+  width: 8px;
+  height: 8px;
+  margin: 8px 2px;
+  border-color: var(--color-blue);
+  background-color: #fff8;
+}
+
+main .carousel-buttons.course-buttons button.selected {
+  border-color: var(--color-white);
+  background-color: var(--color-white);
+}
+
+@media (min-width: 700px) {
+  main .carousel-buttons.course-buttons {
+    bottom: 272px;
+    z-index: 2;
+    background-color: #0008;
+  }
+
+  main .carousel-buttons.course-buttons button {
+    width: 10px;
+    height: 10px;
+    margin: 10px 4px;
+  }
+}
+
+@media (min-width: 900px) {
+  main .carousel-buttons.course-buttons {
+    bottom: 16px;
+    width: calc(100% - 300px - 16px);
+  }
+}
+
+@media (min-width: 1200px) {
+  main .carousel-buttons.course-buttons {
+    bottom: 32px;
+    width: calc(100% - 300px - 32px);
+  }
+}
+
+/* gallery carousel */
+main .carousel-container.gallery-container {
+  padding: 0 16px;
+}
+
+main .carousel {
+  font-family: var(--body-font-family);
+  text-transform: unset;
+}
+
+main .carousel.gallery picture {
+  aspect-ratio: 16 / 9;
+}
+
+main .carousel.gallery > div {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: unset;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 700px) {
+  main .carousel.gallery > div {
+    height: unset;
+  }
+}
+
+main .carousel.gallery div.gallery-image {
+  line-height: 0;
+  aspect-ratio: 16 / 9;
+}
+
+main .carousel.gallery div.gallery-text {
+  box-sizing: border-box;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 16px;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  font-size: var(--body-font-size-xxs);
+}
+
+main .carousel.gallery div.gallery-text p {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+main .carousel.gallery div.gallery-text p.gallery-text-title {
+  flex: 0 0 28px;
+  margin-bottom: 8px;
+  font-size: var(--heading-font-size-xs);
+}
+
+main .carousel.gallery div.gallery-text p.gallery-text-desc {
+  flex: 1 1 auto;
+  font-weight: bold;
+  overflow-y: auto;
+}
+
+main .carousel.gallery div.gallery-text p.gallery-text-credit {
+  flex: 0 0 20px;
+  margin-top: 16px;
+}
+
+@media (min-width: 900px) {
+  main .carousel.gallery div.gallery-text {
+    padding: 16px 32px;
+  }
+
+  main .carousel.gallery div.gallery-text p.gallery-text-desc {
+    font-size: var(--body-font-size-xs);
+  }
+}
