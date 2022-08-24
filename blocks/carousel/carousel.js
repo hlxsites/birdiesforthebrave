@@ -41,16 +41,6 @@ export default async function decorate(block) {
     classes.forEach((e, j) => {
       if (row.children[j]) row.children[j].classList.add(`carousel-${e}`);
     });
-    if (i === 0) {
-      const image = row.querySelector('.carousel-image');
-      const text = row.querySelector('.carousel-text');
-
-      const heroimage = document.querySelector('div.hero picture');
-      const heroh1 = document.querySelector('div.hero h1');
-
-      image.innerHTML = heroimage.outerHTML;
-      text.prepend(heroh1.cloneNode(true));
-    }
     /* buttons */
     const button = document.createElement('button');
     if (!i) button.classList.add('selected');
