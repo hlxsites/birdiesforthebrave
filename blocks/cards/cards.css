@@ -45,3 +45,70 @@
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
+
+.cards-wrapper .carousel-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.cards-wrapper .carousel-buttons .carousel-next,
+.cards-wrapper .carousel-buttons .carousel-prev {
+    height: 40px;
+    width: 40px;
+    border-color: #999;
+}
+
+.cards-wrapper .carousel-buttons .carousel-next::after {
+    content: "";
+    border:1px solid black;
+    transform: rotate(-45deg);
+    display: inline-block;
+    height: 12px;
+    top: -2px;
+    position: relative;
+}
+
+.cards-wrapper .carousel-buttons .carousel-next::before {
+    content: "";
+    border:1px solid black;
+    transform: rotate(45deg);
+    top: 7px;
+    left: 2px;
+    display: inline-block;
+    height: 12px;
+    position: relative;
+}
+
+.cards-wrapper .carousel-buttons .carousel-prev::after {
+    content: "";
+    border:1px solid black;
+    transform: rotate(45deg);
+    display: inline-block;
+    height: 12px;
+    top: -2px;
+    position: relative;
+}
+
+.cards-wrapper .carousel-buttons .carousel-prev::before {
+    content: "";
+    border:1px solid black;
+    transform: rotate(-45deg);
+    top: 7px;
+    left: 2px;
+    display: inline-block;
+    height: 12px;
+    position: relative;
+}
+
+.cards-wrapper .carousel-buttons {
+    border-left: 1px solid #999;
+}
+
+.cards-wrapper .carousel-buttons::after {
+    content: "";
+    border-right: 1px solid #999;
+    display: inline-block;
+    height: 60px;
+    position: absolute;
+    left: 89px;
+}
