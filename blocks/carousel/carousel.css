@@ -1,10 +1,12 @@
 main .carousel-container {
   padding: 0;
+  width: 100%;
+  height: calc(100vh - var(--nav-height));
+  background: linear-gradient(to right top, #bebebe, #f7f7f7);
 }
 
 main .carousel-wrapper {
   position: relative;
-  max-width: 1400px;
 }
 
 main .carousel {
@@ -21,7 +23,6 @@ main .carousel h2 {
   font-size: var(--heading-font-size-l);
   font-weight: 400;
   line-height: .8;
-  text-shadow: 0 0 10px #0008;
 }
 
 @media (min-width: 700px) {
@@ -53,11 +54,6 @@ main .carousel a:hover {
 main .carousel picture {
   box-sizing: border-box;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
 }
 
 main .carousel img {
@@ -68,13 +64,41 @@ main .carousel img {
 
 /* carousel slide */
 main .carousel > div {
-  display: flex;
+  display: grid;
+  grid-template-areas: 
+    'image'
+    'text';
+  grid-template-rows: 1fr;
   flex-shrink: 0;
-  position: relative;
   width: 100%;
-  height: 420px;
-  background-image: linear-gradient(#0002, #0006);
+  height: calc(100vh - (2 * var(--nav-height)));
+  position: relative;
   scroll-snap-align: start;
+}
+
+main .carousel > div > div.carousel-image {
+  grid-area: image;
+}
+
+main .carousel > div > div.carousel-text {
+  grid-area: text;
+  background-color: var(--background-color);
+  margin: 20px;
+}
+
+div.carousel-text h1, div.carousel-text h2 {
+  color: var(--link-color);
+  font-size: var(--heading-font-size-l);
+  font-family: var(--heading-font-family);
+  font-weight: bold;
+  width: 100%;
+}
+
+div.carousel-text p:first-of-type {
+  color: var(--link-color);
+  font-size: var(--heading-font-size-s);
+  width: 100%;
+  border-bottom: 1px solid #999;
 }
 
 @media (min-width: 700px) {
@@ -141,23 +165,26 @@ main .carousel div.carousel-text h2 {
 
 /* carousel content buttons */
 main .carousel p.button-container {
-  margin: 5px;
+  width: 100%;
+  margin-left: 15px;
   font-weight: lighter;
-  text-align: center;
+  text-align: left;
 }
 
 main .carousel a.button {
   min-width: 115px;
-  color: var(--color-white);
+  color: var(--link-hover-color);
   font-family: var(--body-font-family);
 }
 
-main .carousel a.button:hover {
-  filter: brightness(.85);
+main .carousel a.button.primary:hover {
+  background-color: var(--link-hover-color);
+  color: var(--background-color);
 }
 
-main .carousel a.button.primary:any-link {
-  border-color: transparent;
+main .carousel a.button.primary {
+  border-color: var(--link-hover-color);
+  border-width: 1px;
   background-color: var(--color-tan-95);
   font-size: var(--body-font-size-xs);
 }
@@ -205,10 +232,10 @@ main .carousel::-webkit-scrollbar {
 /* carousel nav buttons */
 main .carousel-wrapper .carousel-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   position: absolute;
-  bottom: 10px;
-  right: 0;
+  bottom: 67px;
+  right: 40px;
   left: 0;
   text-align: center;
   z-index: 1;
@@ -220,375 +247,13 @@ main .carousel-buttons button {
   width: 12px;
   margin: 10px 8px;
   padding: 0;
-  border: 1px solid;
+  border: 1px solid var(--text-color);
   border-radius: 50%;
   background-color: transparent;
 }
 
 main .carousel-buttons button.selected {
-  background-color: currentColor;
-}
-
-/* course carousel */
-main .carousel.course > div {
-  flex-direction: column;
-  height: 850px;
-  background-color: var(--color-blue);
-  background-image: unset;
-}
-
-@media (min-width: 700px) {
-  main .carousel.course > div {
-    height: 670px;
-  }
-}
-
-@media (min-width: 900px) {
-  main .carousel.course > div {
-    height: 505px;
-  }
-}
-
-@media (min-width: 1200px) {
-  main .carousel.course > div {
-    height: 740px;
-  }
-}
-
-main .carousel.course picture {
-  z-index: 1;
-}
-
-main .carousel.course div.carousel-image {
-  flex-grow: 1;
-  position: relative;
-}
-
-main .carousel.course div.course-text {
-  align-items: stretch;
-  margin: unset;
-  margin-bottom: 22px; /* for navigation */
-  padding: 16px;
-  background-color: var(--color-blue);
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-xxs);
-  text-transform: initial;
-}
-
-@media (min-width: 700px) {
-  main .carousel.course div.course-text {
-    display: grid; 
-    grid-template-columns: 1fr 240px; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 8px 16px; 
-    grid-template-areas: 
-      'overview stats'
-      'credits stats'; 
-    height: 272px;
-    margin-bottom: 0;
-  }
-}
-
-@media (min-width: 900px) {
-  main .carousel.course div.course-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 300px;
-    height: 473px;
-    background-color: var(--color-blue-95);
-    z-index: 1;
-  }
-}
-
-@media (min-width: 1200px) {
-  main .carousel.course div.course-text {
-    justify-content: flex-start;
-    top: 32px;
-    right: 32px;
-    height: 676px;
-  }
-}
-
-main .carousel.course div.course-text h2,
-main .carousel.course div.course-text h3 {
-  margin: 0;
-  color: var(--color-white);
-  font-family: var(--body-font-family);
-}
-
-main .carousel.course div.course-text h2 {
-  font-size: var(--heading-font-size-s);
-}
-
-main .carousel.course div.course-text h3 {
-  font-size: var(--heading-font-size-xs);
-  text-transform: initial;
-}
-
-@media (min-width: 700px) {
-  main .carousel.course div.course-text h2 {
-    font-size: var(--heading-font-size-l);
-  }
-  
-  main .carousel.course div.course-text h3 {
-    font-size: var(--heading-font-size-xxs);
-  }
-}
-
-main .carousel.course div.course-text p {
-  margin: 0;
-}
-
-/* overview */
-@media (min-width: 700px) {
-  main .carousel.course div.course-text .course-overview {
-    grid-area: overview;
-    display: grid;
-    grid-auto-columns: 1fr; 
-    grid-template-columns: max-content 1fr; 
-    grid-template-rows: 45px 30px 132px; 
-    gap: 0 16px; 
-    grid-template-areas: 
-      'overview-title hole'
-      'overview-subtitle hole'
-      'description description'; 
-      max-height: 242px;
-  }
-
-  main .carousel.course div.course-text .course-overview h2 {
-    grid-area: overview-title;
-    align-self: center;
-  }
-
-  main .carousel.course div.course-text .course-overview h3 {
-    grid-area: overview-subtitle;
-  }
-
-  main .carousel.course div.course-text .course-hole {
-    align-self: center;
-  }
-
-  main .carousel.course div.course-text .course-hole picture {
-    grid-area: hole;
-  }
-
-  main .carousel.course div.course-text .course-overview p:last-child {
-    grid-area: description;
-    box-sizing: border-box;
-    overflow-y: auto;
-    max-height: 362px;
-    padding-right: 8px;
-    font-size: var(--body-font-size-xs);
-  }
-}
-
-@media (min-width: 900px) {
-  main .carousel.course div.course-text .course-overview {
-    grid-template-rows: 45px 30px 156px; 
-    margin-bottom: 16px;
-  }
-}
-
-@media (min-width: 1200px) {
-  main .carousel.course div.course-text .course-overview {
-    flex-grow: 1;
-    grid-template-rows: 45px 30px 1fr; 
-    max-height: unset;
-  }
-}
-
-main .carousel.course div.course-text .course-hole picture {
-  display: none;
-  visibility: hidden;
-  position: initial;
-}
-
-main .carousel.course div.course-text .course-hole img {
-  width: unset;
-  max-width: 150px;
-  height: unset;
-  margin: 0;
-}
-
-@media (min-width: 700px) {
-  main .carousel.course div.course-text .course-hole picture {
-    display: block;
-    visibility: visible;
-  }
-}
-
-@media (min-width: 900px) {
-  main .carousel.course div.course-text .course-hole picture img {
-    max-width: 100%;
-  }
-}
-
-/* stats */
-main .carousel.course div.course-text .course-statistics {
-  grid-area: stats;
-  display: none;
-  visibility: hidden;
-}
-
-main .carousel.course div.course-text .course-statistics h3 {
-  border-bottom: 1px solid #fff4;
-  padding-bottom: 8px;
-  font-size: var(--heading-font-size-l);
-}
-
-main .carousel.course div.course-text .course-statistics .course-avg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  outline: 3px solid var(--color-white);
-  border: 3px solid var(--color-blue);
-  border-radius: 50%;
-  padding: 16px;
-  background-color: var(--color-white);
-  color: var(--color-blue);
-  font-size: var(--body-font-size-xl);
-  line-height: 1;
-  text-align: center;
-}
-
-main .carousel.course div.course-text .course-statistics .course-avg strong {
-  display: block;
-  font-size: var(--body-font-size-xxs);
-  font-weight: normal;
-}
-
-main .carousel.course div.course-text .course-statistics table {
-  align-self: flex-start;
-}
-
-main .carousel.course div.course-text .course-statistics table tr td.course-stat-graph {
-  width: 42%;
-  padding-right: 4px;
-}
-
-main .carousel.course div.course-text .course-statistics table tr.course-eagle .course-stat-bar {
-  background-color: #1c619b;
-}
-
-main .carousel.course div.course-text .course-statistics table tr.course-birdie .course-stat-bar {
-  background-color: #99d9f4;
-}
-
-main .carousel.course div.course-text .course-statistics table tr.course-par .course-stat-bar {
-  background-color: #a2a7ab;
-}
-
-main .carousel.course div.course-text .course-statistics table tr.course-bogey .course-stat-bar {
-  background-color: #f7b941;
-}
-
-main .carousel.course div.course-text .course-statistics table tr.course-2--bogey .course-stat-bar {
-  background-color: #ee5a00;
-}
-
-main .carousel.course div.course-text .course-statistics table tr td.course-stat-graph .course-stat-bar {
-  float: right;
-  height: 14px;
-}
-
-main .carousel.course div.course-text .course-statistics table tr td.course-stat-percent {
-  padding-right: 4px;
-  text-align: right;
-}
-
-main .carousel.course div.course-text .course-statistics table tr td.course-stat-title {
-  color: var(--color-gray);
-}
-
-@media (min-width: 700px) {
-  main .carousel.course div.course-text .course-statistics {
-    display: grid;
-    grid-template-columns: max-content 1fr; 
-    grid-template-rows: max-content 1fr; 
-    gap: 16px; 
-    grid-template-areas: 
-      'statistics-title statistics-title'
-      'avg stats'; 
-    visibility: visible;
-  }
-
-  main .carousel.course div.course-text .course-statistics h3 {
-    grid-area: statistics-title;
-  }
-
-  main .carousel.course div.course-text .course-statistics .course-avg {
-    grid-area: avg;
-  }
-
-  main .carousel.course div.course-text .course-statistics table {
-    grid-area: stats;
-  }
-}
-
-@media (min-width: 900px) {
-  main .carousel.course div.course-text .course-statistics {
-    gap: 0 16px;
-    border-top: 3px solid var(--color-white);
-    padding-top: 16px;
-  }
-
-  main .carousel.course div.course-text .course-statistics h3 {
-    display: none;
-    visibility: hidden;
-  }
-
-  main .carousel.course div.course-text .course-statistics table tr td.course-stat-graph {
-    width: 52%;
-  }
-  
-}
-
-/* credits */
-main .carousel.course div.course-text .course-credits {
-  grid-area: credits;
-  width: 100%;
-  border-top: 1px solid #fff8;
-  padding: 5px 0;
-  font-style: normal;
-  text-align: right;
-}
-
-main .carousel.course div.course-text .course-credits em {
-  font-style: normal;
-}
-
-@media (min-width: 700px) {
-  main .carousel.course div.course-text .course-credits {
-    border-top: 0;
-    padding-bottom: 0;
-  }
-}
-
-@media (min-width: 900px) {
-  main .carousel.course div.course-text .course-credits {
-    border-top: 1px solid #fff8;
-    padding-top: 16px;
-  }
-}
-
-/* nav buttons */
-main .carousel-buttons.course-buttons button {
-  width: 8px;
-  height: 8px;
-  margin: 8px 2px;
-  border-color: var(--color-blue);
-  background-color: #fff8;
-}
-
-main .carousel-buttons.course-buttons button.selected {
-  border-color: var(--color-white);
-  background-color: var(--color-white);
+  background-color: var(--link-color);
 }
 
 @media (min-width: 700px) {
