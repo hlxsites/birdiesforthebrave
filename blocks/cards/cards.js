@@ -18,7 +18,7 @@ export default function decorate(block) {
     const button = document.createElement('button');
     if (!i) button.classList.add('selected');
     button.addEventListener('click', () => {
-      block.scrollTo({ top: 0, left: li.offsetLeft - li.parentNode.offsetLeft, behavior: 'smooth' });
+      ul.scrollTo({ top: 0, left: li.offsetLeft - li.parentNode.offsetLeft, behavior: 'smooth' });
       [...buttons.children].forEach((r) => r.classList.remove('selected'));
       button.classList.add('selected');
     });
