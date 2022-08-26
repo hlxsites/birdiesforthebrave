@@ -1,4 +1,4 @@
-import { toClassName, readBlockConfig } from '../../scripts/scripts.js';
+import { readBlockConfig } from '../../scripts/scripts.js';
 
 async function insertGallerySlides(block) {
   const damPrefix = 'https://www.pgatour.com';
