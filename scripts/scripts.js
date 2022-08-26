@@ -646,6 +646,31 @@ function buildAutoBlocks(main) {
   }
 }
 
+
+export function linkPicture(picture) {
+  const nextSib = picture.parentNode.nextElementSibling;
+  if (nextSib) {
+    const a = nextSib.querySelector('a');
+    if (a && a.textContent.startsWith('https://')) {
+      const pictureP = picture.closest('p');
+      a.innerHTML = '';
+      a.className = '';
+      a.appendChild(picture);
+
+      pictureP.remove();
+    }
+  }
+}
+
+export function decorateLinkedPictures(main) {
+  console.log('decorate linked pictures');
+  /* thanks to word online */
+  main.querySelectorAll('picture').forEach((picture) => {
+    linkPicture(picture);
+  });
+}
+
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -657,6 +682,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  decorateLinkedPictures(main);
 }
 
 /**
