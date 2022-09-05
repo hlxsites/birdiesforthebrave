@@ -1,4 +1,4 @@
-import { readBlockConfig, decorateIcons } from '../../scripts/scripts.js';
+import { readBlockConfig, decorateIcons, decorateLinkedPictures, decorateButtons } from '../../scripts/scripts.js';
 
 /**
  * collapses all open nav sections
@@ -25,29 +25,32 @@ export default async function decorate(block) {
   const resp = await fetch(`${navPath}.plain.html`);
   if (resp.ok) {
     const html = await resp.text();
-    const parser = new DOMParser();
-    const navdoc = parser.parseFromString(html, 'text/html');
-    const navsections = Array.from(navdoc.querySelectorAll('body > div'));
-
-    const nav = document.createElement('nav');
-    const logo = document.createElement('div');
-    logo.className = 'logo';
 
     // decorate nav DOM
-    navsections.forEach((section) => {
-      if (section.querySelector('ul')) {
-        nav.innerHTML += section.innerHTML;
-      } else {
-        const a = section.querySelector('a');
-        const icon = section.querySelector('picture');
-        a.innerHTML = icon.outerHTML;
-        logo.appendChild(a);
-      }
+    const nav = document.createElement('nav');
+    nav.innerHTML = html;
+    decorateIcons(nav);
+
+    const classes = ['brand', 'sections', 'tools'];
+    classes.forEach((e, j) => {
+      const section = nav.children[j];
+      if (section) section.classList.add(`nav-${e}`);
     });
 
+    const navSections = [...nav.children][1];
+    if (navSections) {
+      navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
+        if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+        navSection.addEventListener('click', () => {
+          const expanded = navSection.getAttribute('aria-expanded') === 'true';
+          collapseAllNavSections(navSections);
+          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        });
+      });
+    }
+
     // hamburger for mobile
-    const hamburger = document.createElement('a');
-    hamburger.href = '#';
+    const hamburger = document.createElement('div');
     hamburger.classList.add('nav-hamburger');
     hamburger.innerHTML = '<div class="nav-hamburger-icon"></div>';
     hamburger.addEventListener('click', () => {
@@ -55,8 +58,11 @@ export default async function decorate(block) {
       document.body.style.overflowY = expanded ? '' : 'hidden';
       nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
     });
-    block.appendChild(logo);
-    block.appendChild(hamburger);
-    block.appendChild(nav);
+    nav.prepend(hamburger);
+    nav.setAttribute('aria-expanded', 'false');
+    decorateIcons(nav);
+    block.append(nav);
+    decorateLinkedPictures(block);
+    decorateButtons(nav.querySelector('.nav-tools'));
   }
 }
