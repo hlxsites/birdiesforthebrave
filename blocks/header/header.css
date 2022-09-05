@@ -7,7 +7,7 @@ header nav {
   align-items: center;
   padding: 0 2rem;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   background-color: var(--background-color);
   width: 100vw;
   height: var(--nav-height);
