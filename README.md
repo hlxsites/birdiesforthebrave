@@ -1,9 +1,10 @@
 # Your Project's Title...
-Your project's description...
+
+Migrating https://birdiesforthebrave.org to Franklin, one block at a time
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.hlx.page/
-- Live: https://main--{repo}--{owner}.hlx.live/
+- Preview: https://main--birdiesforthebrave--hlxsites.hlx.page/
+- Live: https://main--birdiesforthebrave--hlxsites.hlx.live/
 
 ## Installation
 
