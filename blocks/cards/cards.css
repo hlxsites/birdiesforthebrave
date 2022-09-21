@@ -50,10 +50,18 @@
     object-fit: cover;
 }
 
+
 .cards-wrapper .carousel-buttons {
     display: flex;
     align-items: center;
 }
+
+@media (min-width: 768px) {
+    .cards-wrapper .carousel-buttons {
+        display: none;
+    }
+}
+
 
 .cards-wrapper .carousel-buttons .carousel-next,
 .cards-wrapper .carousel-buttons .carousel-prev {
@@ -186,15 +194,16 @@ main .cards.icons ul::-webkit-scrollbar {
   display: none;
 }
 
-.cards.icons ul li {
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    width: 100%;
-    display: block;
-    border-left: 1px solid #999;
-    padding-left: 20px;
+@media (max-width: 768px) {
+    .cards.icons ul li {
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        width: 100%;
+        display: block;
+        border-left: 1px solid #999;
+        padding-left: 20px;
+    }
 }
-
 .cards.icons .cards-card-image {
     max-width: 150px;
 }
