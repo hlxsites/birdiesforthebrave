@@ -1,1 +1,10 @@
 /* below the fold CSS goes here */
+
+@media (min-width: 900px) {
+  div.section:nth-of-type(2) {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
