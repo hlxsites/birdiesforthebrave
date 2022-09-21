@@ -1,4 +1,6 @@
-import { readBlockConfig, decorateIcons, decorateLinkedPictures, decorateButtons } from '../../scripts/scripts.js';
+import {
+  readBlockConfig, decorateIcons, decorateLinkedPictures, decorateButtons,
+} from '../../scripts/scripts.js';
 
 /**
  * collapses all open nav sections
