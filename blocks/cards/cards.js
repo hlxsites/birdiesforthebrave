@@ -8,10 +8,28 @@ export default function decorate(block) {
   [...block.children].forEach((row, i) => {
     const li = document.createElement('li');
     li.innerHTML = row.innerHTML;
+    let overlayButton;
     [...li.children].forEach((div) => {
       if (div.querySelector('picture')) div.className = 'cards-card-image';
-      else div.className = 'cards-card-body';
+      else {
+        div.className = 'cards-card-body';
+        const links = div.getElementsByTagName('a');
+        if (links && links.length > 0) {
+          overlayButton = document.createElement('a');
+          overlayButton.href = links[0].href;
+          overlayButton.text = 'Learn more';
+          overlayButton.className = 'callout-overlay-button';
+        }
+      }
     });
+    if (block.classList.contains('overlay')) {
+      const overlay = document.createElement('div');
+      if (overlayButton) {
+        overlay.append(overlayButton);
+      }
+      overlay.className = 'callout-overlay';
+      li.insertBefore(overlay, li.children.item(0));
+    }
     ul.append(li);
 
     /* buttons for carousel-style cards */
