@@ -646,7 +646,6 @@ function buildAutoBlocks(main) {
   }
 }
 
-
 export function linkPicture(picture) {
   const nextSib = picture.parentNode.nextElementSibling;
   if (nextSib) {
@@ -669,7 +668,6 @@ export function decorateLinkedPictures(main) {
     linkPicture(picture);
   });
 }
-
 
 /**
  * Decorates the main element.
