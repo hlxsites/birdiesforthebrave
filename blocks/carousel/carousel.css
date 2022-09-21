@@ -87,7 +87,6 @@ main .carousel div.carousel-text {
   align-content: center;
   justify-content: center;
   grid-area: text;
-  margin: 20px;
   padding: 50px 30px 80px;
   width: 420px;
   background-color: rgba(255,255,255,0.9);
@@ -100,6 +99,7 @@ main .carousel div.carousel-text h2 {
   flex-basis: 100%;
 }
   
+/*
 @media (min-width: 700px) {
   main .carousel div.carousel-text {
     padding: 0 30px;
@@ -116,13 +116,14 @@ main .carousel div.carousel-text h2 {
     margin-bottom: 0;
   }
 }
-  
+*/  
+/*
 @media (min-width: 1200px) {
   main .carousel div.carousel-text {
     padding: 0 60px;
   }
 }
-  
+*/  
 div.carousel-text h1, div.carousel-text h2 {
   color: var(--link-color);
   font-size: var(--heading-font-size-l);
@@ -140,10 +141,9 @@ div.carousel-text p {
   
 div.carousel-text p:first-of-type {
   color: var(--link-color);
-  font-size: var(--heading-font-size-s);
+  font-size: 18px;
   width: 100%;
   border-bottom: 1px solid #999;
-  font-size: 18px;
   line-height: 30px;
   font-weight: 600;
 }
