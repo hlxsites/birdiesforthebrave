@@ -12,8 +12,18 @@ export default async function decorate(block) {
   const footerPath = cfg.footer || '/footer';
   const resp = await fetch(`${footerPath}.plain.html`);
   const html = await resp.text();
+  var template = document.createElement('template');
+  template.innerHTML = html.trim();
+  const footerHtml = template.content.firstChild;
   const footer = document.createElement('div');
-  footer.innerHTML = html;
+  footer.classList.add('footer');
+  while (footerHtml.firstChild) {
+    const n = footerHtml.firstChild;
+    footerHtml.removeChild(n);
+    const div = document.createElement('div');
+    div.append(n)
+    footer.append(div);
+  };
   await decorateIcons(footer);
   block.append(footer);
 }
