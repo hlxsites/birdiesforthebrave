@@ -211,9 +211,6 @@ main .carousel a.button.secondary:any-link {
 }
 
 @media (min-width: 900px) {
-  main .carousel p.button-container {
-    margin-left: 70%;
-  }
 
   main .carousel a.button {
     min-width: 300px;
