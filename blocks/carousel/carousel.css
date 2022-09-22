@@ -159,23 +159,10 @@ div.carousel-text p:first-of-type {
 
 @media (min-width: 700px) {
   main .carousel > div {
-    height: calc(100vh - 10px - var(--nav-height));
+    height: calc(100vh - var(--nav-height));
     min-height: 420px;
   }
 }
-
-@media (min-width: 900px) {
-  main .carousel > div {
-    height: 600px;
-  }
-}
-
-@media (min-width: 1200px) {
-  main .carousel > div {
-    height: 700px;
-  }
-}
-
 
 main .carousel div.carousel-image {
   line-height: 0;
