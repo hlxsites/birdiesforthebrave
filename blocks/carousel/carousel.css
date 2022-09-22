@@ -43,6 +43,10 @@ main .carousel h2 {
   }
 }
 
+main .section > div.carousel-wrapper {
+  max-width: 100%;
+}
+
 main .carousel a:any-link {
   color: var(--color-white);
 }
