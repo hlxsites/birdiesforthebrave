@@ -23,7 +23,7 @@ export default async function decorate(block) {
     const div = document.createElement('div');
     div.append(n);
     footer.append(div);
-  };
+  }
   await decorateIcons(footer);
   block.append(footer);
 }
