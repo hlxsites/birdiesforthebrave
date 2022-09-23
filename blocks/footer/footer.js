@@ -20,7 +20,7 @@ export default async function decorate(block) {
   while (footerHtml.firstChild) {
     const n = footerHtml.firstChild;
     footerHtml.removeChild(n);
-    if ( n.nodeType === Node.ELEMENT_NODE ) {
+    if (n.nodeType === Node.ELEMENT_NODE) {
       const div = document.createElement('div');
       div.append(n);
       footer.append(div);
