@@ -62,7 +62,7 @@ footer .footer a[href^="https://www.facebook.com/"] {
   width: 30px;
   height: 30px;
   display: inline-block;
-  background-image: url(../../icons/facebook.svg);
+  background-image: url("../../icons/facebook.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -72,7 +72,7 @@ footer .footer a[href^="https://www.instagram.com/"] {
   width: 30px;
   height: 30px;
   display: inline-block;
-  background-image: url(../../icons/instagram.svg);
+  background-image: url("../../icons/instagram.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -82,7 +82,7 @@ footer .footer a[href^="https://twitter.com/"] {
   width: 30px;
   height: 30px;
   display: inline-block;
-  background-image: url(../../icons/twitter.svg);
+  background-image: url("../../icons/twitter.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
