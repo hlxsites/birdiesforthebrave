@@ -6,8 +6,6 @@ import { readBlockConfig, decorateIcons } from '../../scripts/scripts.js';
  */
 
 export default async function decorate(block) {
-  var previous = null;
-  var firstUl = false;
   const cfg = readBlockConfig(block);
   block.textContent = '';
 
@@ -23,18 +21,9 @@ export default async function decorate(block) {
     const n = footerHtml.firstChild;
     footerHtml.removeChild(n);
     if ( n.nodeType === Node.ELEMENT_NODE ) {
-      if ( firstUl ) {
-        previous.append(n);
-        firstUl = false;
-      } else {
-        if ( n.nodeName === 'UL') {
-          firstUl = true;
-        }
-        const div = document.createElement('div');
-        div.append(n);
-        footer.append(div);
-        previous = div;
-      }
+      const div = document.createElement('div');
+      div.append(n);
+      footer.append(div);
     }
   }
   await decorateIcons(footer);
