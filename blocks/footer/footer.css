@@ -1,5 +1,5 @@
-div .footer {
-  display: flex;
+div.footer {
+  display: grid;
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
@@ -7,15 +7,35 @@ div .footer {
 }
 
 @media (min-width: 768px) {
-  div .footer {
+  div.footer {
     width: 750px;
   }
 }
   
 @media (min-width: 992px) {
-  div .footer {
+  div.footer {
     width: 970px;
   }
+}
+
+div.footer div:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+div.footer div:nth-child(2) {
+    grid-row: 1;
+    grid-column: 2;
+}
+  
+div.footer div:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+  
+div.footer div:nth-child(4) {
+  grid-row: 1;
+  grid-column: 3;
 }
   
 footer {
