@@ -6,17 +6,17 @@ div .footer {
   padding-right: 15px;
 }
 
+@media (min-width: 768px) {
+  div .footer {
+    width: 750px;
+  }
+}
+  
 @media (min-width: 992px) {
   div .footer {
     width: 970px;
   }
 }
-
-@media (min-width: 768px) {
-    div .footer {
-      width: 750px;
-    }
-  }
   
 footer {
   padding: 2rem;
@@ -29,6 +29,7 @@ footer ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display:flex;
 }
 
 footer ul li {
