@@ -104,3 +104,7 @@ main .logos::-webkit-scrollbar {
     position: relative;
     left: -56px;
 }
+
+div.logos-container h2 {
+  text-align: center;
+}
