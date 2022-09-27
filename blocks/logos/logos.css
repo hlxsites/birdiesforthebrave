@@ -9,8 +9,8 @@ main .logos {
 }
 
 main .logos div {
+  flex: 0 0;
   flex-basis: calc(50vw - 40px);
-  flex-grow: 0 0;
   text-align: center;
   scroll-snap-align: start;
 }
