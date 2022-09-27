@@ -9,9 +9,8 @@ main .logos {
 }
 
 main .logos div {
+  flex: 0 0;
   flex-basis: calc(50vw - 40px);
-  flex-grow: 0;
-  flex-shrink: 0;
   text-align: center;
   scroll-snap-align: start;
 }
@@ -36,13 +35,11 @@ main .logos::-webkit-scrollbar {
 
 .logos-wrapper .carousel-buttons {
   grid-area: carousel-buttons;
+  display: flex;
+  align-items: center;
 }
 
 /* Style the navigation buttons */
-.logos-wrapper .carousel-buttons {
-    display: flex;
-    align-items: center;
-}
 
 .logos-wrapper .carousel-buttons .carousel-next,
 .logos-wrapper .carousel-buttons .carousel-prev {
