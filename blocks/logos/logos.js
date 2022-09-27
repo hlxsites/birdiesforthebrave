@@ -5,6 +5,7 @@ export default async function decorate(block) {
     const overflow = row.cloneNode(true);
     overflow.className = 'overflow';
     block.append(overflow);
+    row.querySelector("img").removeAttribute("loading");
   });
 
   const scroll = (direction) => {
@@ -38,22 +39,23 @@ export default async function decorate(block) {
     }
   };
 
+
+  // scroll automatically
+  const id = setInterval(() => {
+    scroll('next');
+  }, 1500);
+
   const buttons = document.createElement('div');
   buttons.className = 'carousel-buttons';
 
   const next = document.createElement('button');
   next.className = 'carousel-next';
-  next.onclick = () => scroll('next');
+  next.onclick = () => {clearInterval(id); scroll('next');};
 
   const prev = document.createElement('button');
   prev.className = 'carousel-prev';
-  prev.onclick = () => scroll('prev');
+  prev.onclick = () => {clearInterval(id); scroll('prev');};
 
   buttons.append(prev, next);
   block.parentElement.prepend(buttons);
-
-  // scroll automatically
-  setInterval(() => {
-    scroll('next');
-  }, 1500);
 }
