@@ -17,7 +17,7 @@ main .logos div {
 
 @media screen and (min-width: 768px) {
   main .logos div {
-    flex-basis: calc(min(20vw, 1200px));
+    flex-basis: calc(min(20vw, 205px));
   }
 }
 
