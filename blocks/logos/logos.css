@@ -15,6 +15,12 @@ main .logos div {
   scroll-snap-align: start;
 }
 
+@media screen and (min-width: 768px) {
+  main .logos div {
+    flex-basis: calc(min(20vw, 205px));
+  }
+}
+
 main .logos::-webkit-scrollbar {
   display: none;
 }
