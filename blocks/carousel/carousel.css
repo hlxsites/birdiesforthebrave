@@ -97,7 +97,7 @@ main .carousel div.carousel-text {
   grid-area: text;
   padding: 50px 30px 80px;
   width: 420px;
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgb(255 255 255 / 90%);
   color: var(--color-white);
   position: relative;
   z-index: 2;
@@ -125,6 +125,7 @@ main .carousel div.carousel-text h2 {
   }
 }
 */  
+
 /*
 @media (min-width: 1200px) {
   main .carousel div.carousel-text {
@@ -211,7 +212,6 @@ main .carousel a.button.secondary:any-link {
 }
 
 @media (min-width: 900px) {
-
   main .carousel a.button {
     min-width: 300px;
     margin: 0;

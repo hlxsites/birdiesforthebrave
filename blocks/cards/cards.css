@@ -17,8 +17,8 @@
     margin: 0;
     position: absolute;
     background-color: var(--link-color);
-    opacity: 80%;
-    bottom: 0px;
+    opacity: 0.8;
+    bottom: 0;
     width: 100%;
     vertical-align: middle;
 }
@@ -136,7 +136,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(0, 90, 166, 0.9);
+    background: rgb(0 90 166 / 90%);
     width: 100%;
     display: none;
     -ms-flex-pack: center;
@@ -159,11 +159,11 @@
     border-radius: 0;
     color: #e70e18;
     display: inline-block;
-    font-family: "Arial", sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 11px;
     font-weight: 700;
     line-height: 14px;
-    margin: 0 0 20px 0;
+    margin: 0 0 20px;
     outline: 0;
     padding: 12px 30px;
     border-radius: 25px;
@@ -204,6 +204,7 @@ main .cards.icons ul::-webkit-scrollbar {
         padding-left: 20px;
     }
 }
+
 .cards.icons .cards-card-image {
     max-width: 150px;
 }
