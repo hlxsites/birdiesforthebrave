@@ -220,6 +220,11 @@ main img {
   height: auto;
 }
 
+main > .section > .default-content-wrapper > p > picture > img {
+  float: left;
+  margin-right: 1em;
+}
+
 @media (min-width: 600px) {
   main .section {
     padding: 64px 32px;
