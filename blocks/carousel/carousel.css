@@ -238,7 +238,6 @@ main .carousel-wrapper .carousel-buttons {
   display: flex;
   justify-content: right;
   position: absolute;
-  bottom: 67px;
   left: 500px;
   bottom: 120px;
   text-align: center;
