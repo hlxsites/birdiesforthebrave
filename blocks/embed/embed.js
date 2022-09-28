@@ -15,13 +15,13 @@ const loadScript = (url, callback, type) => {
   head.append(script);
   return script;
 };
-  
+
 const getDefaultEmbed = (url) => `<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
     <iframe src="${url.href}" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" allowfullscreen=""
       scrolling="no" allow="encrypted-media" title="Content from ${url.hostname}" loading="lazy">
     </iframe>
   </div>`;
-  
+
 const embedYoutube = (url) => {
   const usp = new URLSearchParams(url.search);
   let vid = encodeURIComponent(usp.get('v'));
@@ -34,7 +34,7 @@ const embedYoutube = (url) => {
     </div>`;
   return embedHTML;
 };
-  
+
 const embedVimeo = (url) => {
   const [, video] = url.pathname.split('/');
   const embedHTML = `<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
@@ -45,18 +45,18 @@ const embedVimeo = (url) => {
     </div>`;
   return embedHTML;
 };
-  
+
 const embedTwitter = (url) => {
   const embedHTML = `<blockquote class="twitter-tweet"><a href="${url.href}"></a></blockquote>`;
   loadScript('https://platform.twitter.com/widgets.js');
   return embedHTML;
 };
-  
+
 const loadEmbed = (block, link) => {
   if (block.classList.contains('embed-is-loaded')) {
     return;
   }
-  
+
   const EMBEDS_CONFIG = [
     {
       match: ['youtube', 'youtu.be'],
@@ -71,7 +71,7 @@ const loadEmbed = (block, link) => {
       embed: embedTwitter,
     },
   ];
-  
+
   const config = EMBEDS_CONFIG.find((e) => e.match.some((match) => link.includes(match)));
   const url = new URL(link);
   if (config) {
@@ -83,7 +83,7 @@ const loadEmbed = (block, link) => {
   }
   block.classList.add('embed-is-loaded');
 };
-  
+
 export default function decorate(block) {
   block.querySelectorAll('li').forEach((video) => {
     const link = video.querySelector('a').href;
