@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
- :root {
+:root {
   /* colors */
   --link-color: #005aa6;
   --link-hover-color: #e70e18;
@@ -203,6 +203,11 @@ main img {
   max-width: 100%;
   width: auto;
   height: auto;
+}
+
+main > .section > .default-content-wrapper > p > picture > img {
+  float: left;
+  margin-right: 1em;
 }
 
 @media (min-width: 600px) {
