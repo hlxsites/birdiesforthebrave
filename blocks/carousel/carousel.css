@@ -291,6 +291,10 @@ main .carousel-buttons button.selected {
   main .carousel-buttons  {
     visibility: hidden;
   }
+
+  main .carousel-nav {
+    visibility: hidden;
+  }
 }
 
 /* gallery carousel */
@@ -367,4 +371,76 @@ main .carousel.gallery div.gallery-text p.gallery-text-credit {
   main .carousel.gallery div.gallery-text p.gallery-text-desc {
     font-size: var(--body-font-size-xs);
   }
+}
+
+.carousel-wrapper .carousel-nav {
+  position: absolute;
+top: 50%;
+left: 0;
+z-index: 3;
+right: 0;
+}
+
+.carousel-wrapper .carousel-next,
+.carousel-wrapper .carousel-prev {
+    height: 40px;
+    width: 40px;
+    border-color: #999;
+    background-color: white;
+    display: block;
+    margin: 10px 8px;
+    padding: 0;
+    border: 1px solid var(--text-color);
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.carousel-wrapper .carousel-next {
+  float: right;
+}
+
+.carousel-wrapper .carousel-prev {
+  float: left;
+}
+
+.carousel-wrapper .carousel-next::after {
+    content: "";
+    border:1px solid black;
+    transform: rotate(-45deg);
+    display: inline-block;
+    height: 12px;
+    top: -2px;
+    position: relative;
+}
+
+.carousel-wrapper .carousel-next::before {
+    content: "";
+    border:1px solid black;
+    transform: rotate(45deg);
+    top: 7px;
+    left: 2px;
+    display: inline-block;
+    height: 12px;
+    position: relative;
+}
+
+.carousel-wrapper .carousel-prev::after {
+    content: "";
+    border:1px solid black;
+    transform: rotate(45deg);
+    display: inline-block;
+    height: 12px;
+    top: -2px;
+    position: relative;
+}
+
+.carousel-wrapper .carousel-prev::before {
+    content: "";
+    border:1px solid black;
+    transform: rotate(-45deg);
+    top: 7px;
+    left: 2px;
+    display: inline-block;
+    height: 12px;
+    position: relative;
 }

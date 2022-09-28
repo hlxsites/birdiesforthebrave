@@ -52,4 +52,33 @@ export default async function decorate(block) {
     buttons.append(button);
   });
   block.parentElement.prepend(buttons);
+
+  const nav = document.createElement('div');
+  nav.className = 'carousel-nav';
+
+  const next = document.createElement('button');
+  next.className = 'carousel-next';
+  next.onclick = () => {
+    let current = buttons.querySelector('.selected') || buttons.firstElementChild;
+    if (current === buttons.lastElementChild) {
+      current = buttons.firstElementChild;
+    } else {
+      current = current.nextElementSibling;
+    }
+    current.click();
+  };
+
+  const prev = document.createElement('button');
+  prev.className = 'carousel-prev';
+  prev.onclick = () => {
+    let current = buttons.querySelector('.selected') || buttons.firstElementChild;
+    if (current === buttons.firstElementChild) {
+      current = buttons.lastElementChild;
+    } else {
+      current = current.previousElementSibling;
+    }
+    current.click();
+  };
+  nav.append(prev, next);
+  block.parentElement.prepend(nav);
 }
