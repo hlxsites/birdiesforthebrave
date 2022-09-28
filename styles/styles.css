@@ -18,6 +18,7 @@
   --overlay-background-color: #e70e18;
   --highlight-background-color: #005aa6;
   --text-color: #000;
+  --line-color: #b3b3b3;
 
   /* fonts */
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
@@ -77,6 +78,20 @@ h3 { font-size: var(--heading-font-size-l) }
 h4 { font-size: var(--heading-font-size-m) }
 h5 { font-size: var(--heading-font-size-s) }
 h6 { font-size: var(--heading-font-size-xs) }
+
+.section h2 {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--line-color)
+}
+
+.section.carousel-container ~ .section h2 {
+  /* 
+   * h2s look different on the home page (no border). Instead of selecting
+   * via page metadata (e.g. `theme: home`), we use the carousel-container
+    * as a proxy for the home page.
+    */
+  border-bottom: 0;
+}
 
 p, dl, ol, ul, pre, blockquote {
   margin-top: 1em;
