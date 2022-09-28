@@ -17,9 +17,13 @@ main .hero {
 
 main .hero h1 {
     max-width: 1200px;
-    margin-left: auto;
+    margin-left: -32px;
+    padding: 32px;
+    margin-top: 200px;
     margin-right: auto;
-    color: white;
+    color: var(--highlight-background-color);
+    background-color: rgb(255 255 255 / 80%);
+    width: fit-content;
 }
 
 
