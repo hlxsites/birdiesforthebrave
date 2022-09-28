@@ -207,6 +207,10 @@ main .cards.icons ul::-webkit-scrollbar {
     height: 150px;
 }
 
+.cards-container {
+    max-width: 1200px;
+}
+
 .cards.icons .cards-card-body {
     position: relative;
     background-color: var(--background-color);

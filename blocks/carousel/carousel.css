@@ -7,6 +7,7 @@ main .carousel-container {
 
 main .carousel-wrapper {
   position: relative;
+  height: 100%;
 }
 
 main .carousel {
@@ -15,7 +16,15 @@ main .carousel {
   display: flex;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  overflow-x: scroll;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+@media (max-width: 700px) {
+  main .carousel {
+    overflow-x: scroll;
+  }
 }
 
 main .carousel h2 {
@@ -79,7 +88,6 @@ main .carousel > div {
   grid-template-rows: 1fr;
   flex-shrink: 0;
   width: 100%;
-  height: calc(100vh - (2 * var(--nav-height)));
   position: relative;
   scroll-snap-align: start;
 }
@@ -105,6 +113,8 @@ main .carousel div.carousel-text {
   color: var(--color-white);
   position: relative;
   z-index: 2;
+  left: 200px;
+  bottom: 100px;
 }
 
 div.carousel-text h1, div.carousel-text h2 {
@@ -170,6 +180,13 @@ div.carousel-text p:first-of-type {
   }
 }
 
+@media (max-width: 700px) {
+  main .carousel div.carousel-text  {
+    left: 0;
+    bottom: 0;
+  }
+}
+
 /* carousel content buttons */
 main .carousel p.button-container {
   width: 100%;
@@ -212,22 +229,6 @@ main .carousel a.button.secondary:any-link {
   }
 }
 
-@media (min-width: 900px) {
-  main .carousel a.button {
-    min-width: 300px;
-    margin: 0;
-  }
-
-  main .carousel p.button-container  {
-    text-align: right;
-  }
-
-  main .carousel a.button.primary:any-link,
-  main .carousel a.button.secondary:any-link {
-    font-size: var(--body-font-size-xxl);
-  }
-}
-
 main .carousel::-webkit-scrollbar {
   display: none;
 }
@@ -237,11 +238,10 @@ main .carousel-wrapper .carousel-buttons {
   display: flex;
   justify-content: right;
   position: absolute;
-  bottom: 67px;
-  right: 40px;
-  left: 0;
+  left: 500px;
+  bottom: 120px;
   text-align: center;
-  z-index: 1;
+  z-index: 3;
 }
 
 main .carousel-buttons button {
@@ -284,6 +284,12 @@ main .carousel-buttons button.selected {
   main .carousel-buttons.course-buttons {
     bottom: 32px;
     width: calc(100% - 300px - 32px);
+  }
+}
+
+@media (max-width: 700px) {
+  main .carousel-buttons  {
+    visibility: hidden;
   }
 }
 

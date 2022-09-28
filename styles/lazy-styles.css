@@ -6,14 +6,15 @@
     gap: 2em;
     grid-template-columns: 1fr 1fr;
     align-items: start;
+    margin: 0 auto;
   }
 }
 
-
-div.section:nth-of-type(3) > .default-content-wrapper  {
-    margin: 0 auto
+main {
+    text-align: center;
 }
 
-div.section:nth-of-type(3) > .cards-wrapper  {
-    margin: 0 auto
+div.section {
+    display: inline-block;
+    text-align: left;
 }

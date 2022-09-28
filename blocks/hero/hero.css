@@ -6,6 +6,7 @@ main .hero-container > div {
   
 main .hero-container {
     padding: 0;
+    display: block !important;
 }
   
 main .hero {

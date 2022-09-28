@@ -6,9 +6,11 @@ div.columns h2 {
   margin-top: 0;
 }
 
-div.columns > div {
-  display: flex;
-  flex-direction: row;
+@media (min-width: 900px) {
+  div.columns > div {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 div.columns > div > div {
