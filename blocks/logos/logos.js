@@ -1,3 +1,21 @@
+/**
+ * Returns the "mirror" element of a list of sibling elements. The
+ * parent of the element is assumed to have an even list of children.
+ * This list is split in half, and the element is returned that is
+ * at the same position of the current element in the other half of
+ * the list.
+ * @param {Element} element a DOM element
+ * @returns {Element} the mirror element
+ */
+function mirror(element) {
+  const parent = element.parentElement;
+  const siblings = parent.children;
+  const half = siblings.length / 2;
+  const myindex = Array.prototype.indexOf.call(siblings, element);
+  const mirrorindex = (myindex % half) + half;
+  return siblings[mirrorindex];
+}
+
 export default async function decorate(block) {
   // we need to duplicate all children, so that we have
   // an overflow area for the carousel
@@ -21,8 +39,12 @@ export default async function decorate(block) {
       return;
     }
     const next = direction === 'next' ? current.nextElementSibling : current.previousElementSibling;
+    const currentmirror = mirror(current);
+    const nextmirror = mirror(next);
     current.classList.remove('selected');
     next.classList.add('selected');
+    currentmirror.classList.remove('mirror');
+    nextmirror.classList.add('mirror');
 
     block.scrollTo({ top: 0, left: next.offsetLeft - next.parentNode.offsetLeft, behavior: 'smooth' });
     if (next.classList.contains('overflow')) {
@@ -39,22 +61,28 @@ export default async function decorate(block) {
     }
   };
 
-  // scroll automatically
-  const id = setInterval(() => {
-    scroll('next');
-  }, 1500);
-
   const buttons = document.createElement('div');
   buttons.className = 'carousel-buttons';
 
   const next = document.createElement('button');
   next.className = 'carousel-next';
-  next.onclick = () => { clearInterval(id); scroll('next'); };
 
   const prev = document.createElement('button');
   prev.className = 'carousel-prev';
-  prev.onclick = () => { clearInterval(id); scroll('prev'); };
 
   buttons.append(prev, next);
   block.parentElement.prepend(buttons);
+
+  const autoScroll = !block.classList.contains('stopped');
+  if (autoScroll) {
+    // scroll automatically
+    const id = setInterval(() => {
+      scroll('next');
+    }, 1500);
+    next.onclick = () => { clearInterval(id); scroll('next'); };
+    prev.onclick = () => { clearInterval(id); scroll('prev'); };
+  } else {
+    next.onclick = () => { scroll('next'); };
+    prev.onclick = () => { scroll('prev'); };
+  }
 }
