@@ -1,3 +1,21 @@
+/**
+ * Returns the "mirror" element of a list of sibling elements. The
+ * parent of the element is assumed to have an even list of children.
+ * This list is split in half, and the element is returned that is
+ * at the same position of the current element in the other half of
+ * the list.
+ * @param {Element} element a DOM element
+ * @returns {Element} the mirror element
+ */
+function mirror(element) {
+  const parent = element.parentElement;
+  const siblings = parent.children;
+  const half = siblings.length / 2;
+  const myindex = Array.prototype.indexOf.call(siblings, element);
+  const mirrorindex = (myindex % half) + half;
+  return siblings[mirrorindex];
+}
+
 export default async function decorate(block) {
   // we need to duplicate all children, so that we have
   // an overflow area for the carousel
@@ -21,8 +39,12 @@ export default async function decorate(block) {
       return;
     }
     const next = direction === 'next' ? current.nextElementSibling : current.previousElementSibling;
+    const currentmirror = mirror(current);
+    const nextmirror = mirror(next);
     current.classList.remove('selected');
     next.classList.add('selected');
+    currentmirror.classList.remove('mirror');
+    nextmirror.classList.add('mirror');
 
     block.scrollTo({ top: 0, left: next.offsetLeft - next.parentNode.offsetLeft, behavior: 'smooth' });
     if (next.classList.contains('overflow')) {
