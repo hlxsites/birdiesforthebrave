@@ -73,7 +73,7 @@ export default async function decorate(block) {
   buttons.append(prev, next);
   block.parentElement.prepend(buttons);
 
-  const autoScroll = !block.classList.contains('compact');
+  const autoScroll = !block.classList.contains('stopped');
   if (autoScroll) {
     // scroll automatically
     const id = setInterval(() => {
