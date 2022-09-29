@@ -35,6 +35,17 @@ main .logos::-webkit-scrollbar {
   justify-items: center;
 }
 
+main .carousel-buttons button {
+  display: block;
+  height: 12px;
+  width: 12px;
+  margin: 10px 8px;
+  padding: 0;
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
+  background-color: transparent;
+}
+
 .logos-wrapper .logos {
   grid-area: carousel;
 }
@@ -49,60 +60,60 @@ main .logos::-webkit-scrollbar {
 
 .logos-wrapper .carousel-buttons .carousel-next,
 .logos-wrapper .carousel-buttons .carousel-prev {
-    height: 40px;
-    width: 40px;
-    border-color: #999;
+  height: 40px;
+  width: 40px;
+  border-color: #999;
 }
 
 .logos-wrapper .carousel-buttons .carousel-next::after {
-    content: "";
-    border:1px solid black;
-    transform: rotate(-45deg);
-    display: inline-block;
-    height: 12px;
-    top: -2px;
-    position: relative;
+  content: "";
+  border:1px solid black;
+  transform: rotate(-45deg);
+  display: inline-block;
+  height: 12px;
+  top: -2px;
+  position: relative;
 }
 
 .logos-wrapper .carousel-buttons .carousel-next::before {
-    content: "";
-    border:1px solid black;
-    transform: rotate(45deg);
-    top: 7px;
-    left: 2px;
-    display: inline-block;
-    height: 12px;
-    position: relative;
+  content: "";
+  border:1px solid black;
+  transform: rotate(45deg);
+  top: 7px;
+  left: 2px;
+  display: inline-block;
+  height: 12px;
+  position: relative;
 }
 
 .logos-wrapper .carousel-buttons .carousel-prev::after {
-    content: "";
-    border:1px solid black;
-    transform: rotate(45deg);
-    display: inline-block;
-    height: 12px;
-    top: -2px;
-    position: relative;
+  content: "";
+  border:1px solid black;
+  transform: rotate(45deg);
+  display: inline-block;
+  height: 12px;
+  top: -2px;
+  position: relative;
 }
 
 .logos-wrapper .carousel-buttons .carousel-prev::before {
-    content: "";
-    border:1px solid black;
-    transform: rotate(-45deg);
-    top: 7px;
-    left: 2px;
-    display: inline-block;
-    height: 12px;
-    position: relative;
+  content: "";
+  border:1px solid black;
+  transform: rotate(-45deg);
+  top: 7px;
+  left: 2px;
+  display: inline-block;
+  height: 12px;
+  position: relative;
 }
 
 .logos-wrapper .carousel-buttons::after {
-    content: "";
-    border-right: 1px solid #999;
-    display: inline-block;
-    height: 60px;
-    position: relative;
-    left: -56px;
+  content: "";
+  border-right: 1px solid #999;
+  display: inline-block;
+  height: 60px;
+  position: relative;
+  left: -56px;
 }
 
 div.logos-container h2 {
