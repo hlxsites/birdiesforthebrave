@@ -39,22 +39,28 @@ export default async function decorate(block) {
     }
   };
 
-  // scroll automatically
-  const id = setInterval(() => {
-    scroll('next');
-  }, 1500);
-
   const buttons = document.createElement('div');
   buttons.className = 'carousel-buttons';
 
   const next = document.createElement('button');
   next.className = 'carousel-next';
-  next.onclick = () => { clearInterval(id); scroll('next'); };
 
   const prev = document.createElement('button');
   prev.className = 'carousel-prev';
-  prev.onclick = () => { clearInterval(id); scroll('prev'); };
 
   buttons.append(prev, next);
   block.parentElement.prepend(buttons);
+
+  const autoScroll = !block.classList.contains('compact');
+  if (autoScroll) {
+    // scroll automatically
+    const id = setInterval(() => {
+      scroll('next');
+    }, 1500);
+    next.onclick = () => { clearInterval(id); scroll('next'); };
+    prev.onclick = () => { clearInterval(id); scroll('prev'); };
+  } else {
+    next.onclick = () => { scroll('next'); };
+    prev.onclick = () => { scroll('prev'); };
+  }
 }
