@@ -1,117 +1,93 @@
-div.footer {
-  display: grid;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-@media (min-width: 768px) {
-  div.footer {
-    width: 750px;
-  }
-}
-  
-@media (min-width: 992px) {
-  div.footer {
-    width: 970px;
-  }
-}
-
-div.footer div:nth-child(1) {
-    grid-row: 1;
-    grid-column: 1;
-}
-
-div.footer div:nth-child(2) {
-    grid-row: 1;
-    grid-column: 2;
-}
-  
-div.footer div:nth-child(3) {
-  grid-column: 2;
-  grid-row: 2;
-}
-  
-div.footer div:nth-child(4) {
-  grid-row: 1;
-  grid-column: 3;
-}
-  
 footer {
-  padding: 2rem;
+  width: 100vw;
+  box-sizing: border-box;
   background-color: #f2f2f2;
   font-size: var(--body-font-size-xs);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  white-space: nowrap;
+}
+
+.footer div {
+  padding: 16px;
+}
+
+.footer div:nth-child(2) :is(ul,p) {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
   text-align: center;
 }
 
-footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display:flex;
-}
-
-footer ul li {
-  margin: 5px;
-}
-
-footer ul a:link {
+.footer div:nth-child(2) ul li a {
   color: var(--text-color);
   text-decoration: underline;
 }
 
-footer p a[href^="mailto:"] {
-  font-size: var(--body-font-size-xxl);
-  font-weight: bolder;
-  display: block;
-  color: var(--text-color);
-  margin:10px;
-}
-
-footer p a:any-link {
+.footer div:nth-child(2) p a[href^="mailto:"] {
+  font-weight: bold;
   color: var(--text-color);
 }
 
-footer .footer p {
-  margin: 0;
+.footer div:nth-child(3) ul {
+  list-style: none;
+  display: flex;
+  gap: 5px;
 }
 
-footer .footer a[href^="https://www.facebook.com/"] {
-  color: transparent;
+.footer div:nth-child(3) ul li {
+  display: inline-flex;
+}
+
+.footer div:nth-child(3) ul li a {
   width: 30px;
   height: 30px;
   display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 0;
+}
+
+.footer a[href^="https://www.facebook.com/"] {
   background-image: url("../../icons/facebook.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
-footer .footer a[href^="https://www.instagram.com/"] {
-  color: transparent;
-  width: 30px;
-  height: 30px;
-  display: inline-block;
+.footer a[href^="https://www.instagram.com/"] {
   background-image: url("../../icons/instagram.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
-footer .footer a[href^="https://twitter.com/"] {
-  color: transparent;
-  width: 30px;
-  height: 30px;
-  display: inline-block;
+.footer a[href^="https://twitter.com/"] {
   background-image: url("../../icons/twitter.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
-footer ul:last-of-type {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+@media (min-width: 768px) {
+  .footer div:nth-child(2) ul {
+    flex-direction: row;
+  }
+
+  .footer div:nth-child(2) ul li:not(:last-of-type):after {
+    content: '|';
+    font-size: 11px;
+    color: var(--text-color);
+    padding-left: 8px;
+  }
 }
 
-footer ul:last-of-type li {
-  display: inline-block;
+@media (min-width: 992px) {
+  .footer,
+  .footer div:nth-child(2) p {
+    flex-direction: row;
+  }
 }
