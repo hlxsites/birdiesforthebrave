@@ -15,6 +15,34 @@ main .logos div {
   scroll-snap-align: start;
 }
 
+main .logos.expanded {
+  padding-top: 30em;
+}
+
+main .logos.expanded div {
+  flex-basis: 5em;
+}
+
+main .logos.expanded div.mirror {
+  position: absolute;
+  height: 25em;
+  width: 100%;
+  left: 0;
+  margin-top: -40em;
+}
+
+main .logos.expanded img {
+  height: 5em;
+  width: 5em;
+  object-fit: cover;
+}
+
+main .logos.expanded div.mirror img {
+  height: 25em;
+  width: 100%;
+  object-fit: contain;
+}
+
 @media screen and (min-width: 768px) {
   main .logos div {
     flex-basis: calc(min(20vw, 205px));
