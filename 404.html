@@ -44,6 +44,23 @@
     main.error .error-number text {
       font-family: var(--fixed-font-family);
     }
+
+    main.error {
+      text-align: center;
+      background-image: linear-gradient(#0004, #000c), url('/styles/404-bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    main.error .section {
+      width: 100vw;
+      color: white;
+    }
+
+    main.error .section h2 {
+      color: white;
+    }
+
   </style>
   <link rel="stylesheet" href="/styles/lazy-styles.css">
 </head>
@@ -52,12 +69,10 @@
   <header></header>
   <main class="error">
     <div class="section">
-      <svg viewBox="1 0 38 18" class="error-number">
-        <text x="0" y="17">404</text>
-      </svg>
-      <h2 class="error-message">Page Not Found</h2>
+      <h2 class="error-message">Page not found<br>Let's get you back in play!</h2>
+      <p>The page you are looking for has either been moved, deleted or simply does not exist.</p>
       <p class="button-container">
-        <a href="/" class="button secondary error-button-home">Go home</a>
+        <a href="/" class="button primary error-button-home">Go home</a>
       </p>
     </div>
   </main>
