@@ -1,0 +1,4 @@
+ birdiesforthebrave:
+    origin: https://birdiesforthebrave.org
+    source: /query-index.json
+    destination: /sitemap-en.xml
