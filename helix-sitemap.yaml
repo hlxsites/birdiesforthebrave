@@ -2,6 +2,6 @@ sitemaps:
   birdiesforthebrave:
     origin: https://main--birdiesforthebrave--hlxsites.hlx.page
     source: /query-index.json
-    destination: /sitemap-en.xml
+    destination: /sitemap.xml
 
 
