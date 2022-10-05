@@ -51,6 +51,17 @@
     object-fit: cover;
 }
 
+.cards-wrapper {
+    margin: auto;
+}
+
+.default-content-wrapper {
+    margin: auto;
+}
+
+.section {
+    min-width: 51%;
+}
 
 .cards-wrapper .carousel-buttons {
     display: flex;
@@ -209,6 +220,12 @@ main .cards.icons ul::-webkit-scrollbar {
 
 .cards-container {
     max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        max-width: 100%;
+    }
 }
 
 .cards.icons .cards-card-body {

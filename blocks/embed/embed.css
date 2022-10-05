@@ -14,3 +14,11 @@ main .embed li {
 main .embed-container h1 {
     text-align: center;
 }
+
+main .embed-wrapper {
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+}

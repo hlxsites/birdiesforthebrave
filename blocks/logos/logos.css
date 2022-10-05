@@ -61,6 +61,7 @@ main .logos::-webkit-scrollbar {
     'carousel'
     'carousel-buttons';
   justify-items: center;
+  margin: auto;
 }
 
 main .carousel-buttons button {

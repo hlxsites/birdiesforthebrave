@@ -39,8 +39,12 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 160px;
+  --nav-height: 120px;
 
+}
+
+main {
+  font-size: 0;
 }
 
 body {
@@ -180,6 +184,8 @@ main input:hover {
 
 main .section {
   padding: 64px 16px;
+  font-size: var(--body-font-size-m);
+  min-width: 51%;
 }
 
 main pre {
@@ -220,6 +226,10 @@ main img {
   height: auto;
 }
 
+main > .section > .default-content-wrapper {
+  margin: auto;
+}
+
 main > .section > .default-content-wrapper > p > picture > img {
   float: left;
   margin-right: 1em;
@@ -239,7 +249,6 @@ main > .section > .default-content-wrapper > p > picture > img {
     --heading-font-size-m: 30px;
     --heading-font-size-s: 24px;
     --heading-font-size-xs: 22px;  
-    --nav-height: 105px;
   }
   
   .section > div {
