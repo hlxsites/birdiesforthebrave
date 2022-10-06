@@ -265,7 +265,7 @@ main .carousel-buttons button.selected {
   background-color: var(--link-color);
 }
 
-@media (min-width: 900pxf) {
+@media (min-width: 900px) {
   main .carousel-buttons.course-buttons {
     bottom: 272px;
     z-index: 2;
