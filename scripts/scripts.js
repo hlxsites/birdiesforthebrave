@@ -619,11 +619,11 @@ function buildHeroBlock(main) {
   }
 }
 
-function loadHeader(header) {
+async function loadHeader(header) {
   const headerBlock = buildBlock('header', '');
   header.append(headerBlock);
   decorateBlock(headerBlock);
-  loadBlock(headerBlock);
+  await loadBlock(headerBlock);
 }
 
 function loadFooter(footer) {
@@ -699,6 +699,7 @@ async function loadEager(doc) {
  * loads everything that doesn't need to be delayed.
  */
 async function loadLazy(doc) {
+  await loadHeader(doc.querySelector('header'));
   const main = doc.querySelector('main');
   await loadBlocks(main);
 
@@ -706,7 +707,6 @@ async function loadLazy(doc) {
   const element = hash ? main.querySelector(hash) : false;
   if (hash && element) element.scrollIntoView();
 
-  loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
