@@ -4,6 +4,11 @@ main .carousel-container {
   height: calc(100vh - var(--nav-height));
   background: linear-gradient(to right top, #bebebe, #f7f7f7);
 }
+@media (max-width: 900px) {
+  main .carousel-container {
+    height: 100%;
+  }
+}
 
 main .carousel-wrapper {
   position: relative;
@@ -21,7 +26,7 @@ main .carousel {
   overflow-y: hidden;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   main .carousel {
     overflow-x: scroll;
   }
@@ -34,7 +39,7 @@ main .carousel h2 {
   line-height: .8;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   main .carousel h2 {
     font-size: var(--heading-font-size-xxl);
   }
@@ -114,8 +119,9 @@ main .carousel div.carousel-text {
   position: relative;
   z-index: 2;
   left: 200px;
-  bottom: 100px;
+  max-width: 80%;
 }
+
 
 div.carousel-text h1, div.carousel-text h2 {
   color: var(--link-color);
@@ -173,14 +179,14 @@ div.carousel-text p:first-of-type {
 }
 
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   main .carousel > div {
     height: calc(100vh - var(--nav-height));
     min-height: 420px;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   main .carousel div.carousel-text  {
     left: 0;
     bottom: 0;
@@ -218,7 +224,7 @@ main .carousel a.button.secondary:any-link {
   font-size: var(--body-font-size-xs);
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   main .carousel a.button {
     min-width: 200px;
   }
@@ -239,7 +245,7 @@ main .carousel-wrapper .carousel-buttons {
   justify-content: right;
   position: absolute;
   left: 500px;
-  bottom: 120px;
+  bottom: 20px;
   text-align: center;
   z-index: 3;
 }
@@ -259,7 +265,7 @@ main .carousel-buttons button.selected {
   background-color: var(--link-color);
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900pxf) {
   main .carousel-buttons.course-buttons {
     bottom: 272px;
     z-index: 2;
@@ -287,7 +293,7 @@ main .carousel-buttons button.selected {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   main .carousel-buttons  {
     visibility: hidden;
   }
@@ -316,7 +322,7 @@ main .carousel.gallery > div {
   scroll-snap-align: start;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   main .carousel.gallery > div {
     height: unset;
   }
