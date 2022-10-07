@@ -12,20 +12,27 @@ export default async function decorate(block) {
   const footerPath = cfg.footer || '/footer';
   const resp = await fetch(`${footerPath}.plain.html`);
   const html = await resp.text();
-  const template = document.createElement('template');
-  template.innerHTML = html.trim();
-  const footerHtml = template.content.firstChild;
-  const footer = document.createElement('div');
-  footer.classList.add('footer');
-  while (footerHtml.firstChild) {
-    const n = footerHtml.firstChild;
-    footerHtml.removeChild(n);
-    if (n.nodeType === Node.ELEMENT_NODE) {
-      const div = document.createElement('div');
-      div.append(n);
-      footer.append(div);
-    }
+  const template = document.createRange().createContextualFragment(html).firstElementChild;
+  const footer = document.createDocumentFragment();
+
+  const logo = document.createElement('div');
+  logo.append(template.firstElementChild);
+
+  const legal = document.createElement('div');
+  legal.append(template.firstElementChild);
+  while (template.firstElementChild.childNodes.length > 2) {
+    template.firstElementChild.lastChild.remove();
   }
-  await decorateIcons(footer);
+  legal.append(template.firstElementChild);
+
+  const social = document.createElement('div');
+  social.append(template.firstElementChild);
+
+  footer.append(logo);
+  footer.append(legal);
+  footer.append(social);
+
   block.append(footer);
+
+  decorateIcons(block);
 }
