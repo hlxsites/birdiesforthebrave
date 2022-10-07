@@ -77,7 +77,7 @@ footer {
     flex-direction: row;
   }
 
-  .footer div:nth-child(2) ul li:not(:last-of-type):after {
+  .footer div:nth-child(2) ul li:not(:last-of-type)::after {
     content: '|';
     font-size: 11px;
     color: var(--text-color);
