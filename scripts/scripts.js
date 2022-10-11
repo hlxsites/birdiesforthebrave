@@ -662,7 +662,6 @@ export function linkPicture(picture) {
 }
 
 export function decorateLinkedPictures(main) {
-  console.log('decorate linked pictures');
   /* thanks to word online */
   main.querySelectorAll('picture').forEach((picture) => {
     linkPicture(picture);
