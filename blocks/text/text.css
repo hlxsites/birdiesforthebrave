@@ -1,0 +1,22 @@
+.text-container div.default-content-wrapper:nth-child(n + 2) h2 {
+  text-align: center;
+  padding-bottom: 0px;
+  border-bottom: 0px;
+}
+
+div .text.bluebox {
+  background-color: #005aa6;
+  color: #fff;
+  padding: 0.8em;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  font-family: "Arial Narrow",sans-serif;
+}
+
+div .text.centeredlist li {
+  list-style: none;
+  text-align: center;
+}
