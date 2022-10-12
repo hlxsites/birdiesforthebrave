@@ -198,7 +198,15 @@ main .cards.icons ul::-webkit-scrollbar {
   display: none;
 }
 
+.cards.icons li {
+  flex: 1 1 0px;
+}
+
 @media (max-width: 768px) {
+    .cards.icons li {
+        flex: 0 0 auto;
+    }
+
     .cards.icons ul li {
         scroll-snap-align: start;
         flex-shrink: 0;
@@ -238,6 +246,7 @@ main .cards.icons ul::-webkit-scrollbar {
     display: block;
     color: var(--text-color);
     text-align: left;
+    padding-right: 5px;
 }
 
 .cards.icons .cards-card-body h3 {
