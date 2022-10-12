@@ -3,6 +3,7 @@ footer {
   box-sizing: border-box;
   background-color: #f2f2f2;
   font-size: var(--body-font-size-xs);
+  clear: both;
 }
 
 .footer {
