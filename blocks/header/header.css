@@ -13,7 +13,6 @@ header nav {
   height: var(--nav-height);
   box-sizing: border-box;
   font-family: var(--heading-font-family);
-  left: calc((100vw - 1200px) / 2);
   max-width: 1200px;
 }
 
@@ -181,6 +180,9 @@ header nav[aria-expanded='true'] .nav-tools li {
     height: var(--nav-height);
     padding: 16px 0;
     z-index: 4;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 
   header nav .nav-sections > ul > li.nav-drop {
