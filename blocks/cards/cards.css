@@ -182,11 +182,6 @@
     padding:12px 60px
 }
 
-
-.cards.icons .cards-card-body {
-    opacity: 1.0;
-}
-
 .cards.icons .cards-card-body h3 a {
     color: var(--link-color);
 }
@@ -233,6 +228,7 @@ main .cards.icons ul::-webkit-scrollbar {
 }
 
 .cards.icons .cards-card-body {
+    opacity: 1.0;
     position: relative;
     background-color: var(--background-color);
     text-align: left;
