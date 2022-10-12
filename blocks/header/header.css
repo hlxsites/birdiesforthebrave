@@ -12,7 +12,7 @@ header nav {
   width: 100vw;
   height: var(--nav-height);
   box-sizing: border-box;
-  font-family: var(--body-font-family);
+  font-family: var(--heading-font-family);
 }
 
 header nav a:any-link {
@@ -212,6 +212,7 @@ header nav[aria-expanded='true'] .nav-tools li {
     font-size: 12px;
     margin: 4px;
     text-transform: uppercase;
+    font-family: var(--body-font-family);
   }
 
   header nav .nav-tools {
