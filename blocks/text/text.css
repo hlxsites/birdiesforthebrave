@@ -1,7 +1,7 @@
 .text-container div.default-content-wrapper:nth-child(n + 2) h2 {
   text-align: center;
-  padding-bottom: 0px;
-  border-bottom: 0px;
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 div .text.bluebox {
