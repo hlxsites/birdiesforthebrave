@@ -183,6 +183,10 @@
 }
 
 
+.cards.icons .cards-card-body {
+    opacity: 1.0;
+}
+
 .cards.icons .cards-card-body h3 a {
     color: var(--link-color);
 }
