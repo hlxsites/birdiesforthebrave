@@ -396,7 +396,6 @@ right: 0;
     display: block;
     margin: 10px 8px;
     padding: 0;
-    border: 1px solid var(--text-color);
     border-radius: 50%;
     z-index: 3;
 }
