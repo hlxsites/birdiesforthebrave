@@ -210,7 +210,7 @@ main .carousel a.button {
 main .carousel a.button.primary {
   border-color: var(--link-hover-color);
   border-width: 1px;
-  background-color: var(--color-tan-95);
+  background-color: white;
   font-size: var(--body-font-size-xs);
 }
 
