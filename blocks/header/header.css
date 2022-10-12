@@ -13,6 +13,16 @@ header nav {
   height: var(--nav-height);
   box-sizing: border-box;
   font-family: var(--heading-font-family);
+  left: calc((100vw - 1200px) / 2);
+  max-width: 1200px;
+}
+
+header div.header {
+  position: fixed;
+  height: var(--nav-height);
+  width: 100%;
+  z-index: 4;
+  background-color: var(--background-color);
 }
 
 header nav a:any-link {
@@ -169,7 +179,7 @@ header nav[aria-expanded='true'] .nav-tools li {
     grid-template-rows: 1fr 1fr; 
     gap: 0 0; 
     height: var(--nav-height);
-    padding: 16px 2rem;
+    padding: 16px 0;
     z-index: 4;
   }
 
@@ -250,7 +260,7 @@ header nav[aria-expanded='true'] .nav-tools li {
 
   header nav .nav-brand {
     position:absolute;
-    left: calc(50vw - (200px / 2));
+    left: calc((min(50vw, 600px) - 100px));
     background: white;
     width: 200px;
     text-align: center;
@@ -335,3 +345,4 @@ header nav[aria-expanded='true'] .nav-tools li {
     z-index: 5;
   }
 }
+  }}
