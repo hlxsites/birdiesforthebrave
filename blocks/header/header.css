@@ -185,23 +185,6 @@ header nav[aria-expanded='true'] .nav-tools li {
     margin: auto;
   }
 
-  header nav::after {
-    content: "★ Honor being honorable ★";
-    display: block;
-    background: var(--link-hover-color);
-    color: white;
-    font-size: var(--body-font-size-xs);
-    text-transform: uppercase;
-    text-align: center;
-    padding: 0.5rem 0;
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: calc(var(--nav-height) - 4px);
-    font-weight: bold;
-    z-index: 4;
-  }
-
   header nav .nav-sections > ul > li.nav-drop {
     position: relative;
     padding-right: 32px;
@@ -346,4 +329,21 @@ header nav[aria-expanded='true'] .nav-tools li {
     box-shadow: 0 0 5px var(text-color);
     z-index: 5;
   }
+}
+
+header nav::after {
+  content: "★ Honor being honorable ★";
+  display: block;
+  background: var(--link-hover-color);
+  color: white;
+  font-size: var(--body-font-size-xs);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5rem 0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: calc(var(--nav-height) - 4px);
+  font-weight: bold;
+  z-index: 4;
 }
