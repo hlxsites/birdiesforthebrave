@@ -11,10 +11,11 @@
 }
 
 main {
-    text-align: center;
+  text-align: center;
 }
 
 div.section {
-    display: inline-block;
-    text-align: left;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
