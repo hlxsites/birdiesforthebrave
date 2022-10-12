@@ -59,10 +59,6 @@
     margin: auto;
 }
 
-.section {
-    min-width: 51%;
-}
-
 .cards-wrapper .carousel-buttons {
     display: flex;
     align-items: center;
@@ -195,7 +191,7 @@
 }
 
 main .cards.icons ul::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 @media (max-width: 768px) {

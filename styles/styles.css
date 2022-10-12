@@ -185,7 +185,6 @@ main input:hover {
 main .section {
   padding: 64px 16px;
   font-size: var(--body-font-size-m);
-  min-width: 51%;
 }
 
 main pre {
