@@ -195,6 +195,8 @@ main .cards.icons ul::-webkit-scrollbar {
 
 .cards.icons li {
   flex: 1 1 0px;
+  padding-left: 20px;
+  border-left: 1px solid #999;
 }
 
 @media (max-width: 768px) {
@@ -207,8 +209,6 @@ main .cards.icons ul::-webkit-scrollbar {
         flex-shrink: 0;
         width: 100%;
         display: block;
-        border-left: 1px solid #999;
-        padding-left: 20px;
     }
 }
 
