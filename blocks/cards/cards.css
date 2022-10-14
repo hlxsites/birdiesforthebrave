@@ -121,13 +121,13 @@
     position: relative;
 }
 
-.cards-wrapper .carousel-buttons::after {
+.cards-wrapper .carousel-buttons::before {
     content: "";
     border-right: 1px solid #999;
     display: inline-block;
     height: 60px;
-    position: absolute;
-    left: 89px;
+    position: relative;
+    left: 55px;
 }
 
 .cards.icons ul {
@@ -194,9 +194,9 @@ main .cards.icons ul::-webkit-scrollbar {
 }
 
 .cards.icons li {
-  flex: 1 1 0px;
-  padding-left: 20px;
-  border-left: 1px solid #999;
+    flex: 1 1 0px;
+    padding-left: 20px;
+    border-left: 1px solid #999;
 }
 
 @media (max-width: 768px) {
