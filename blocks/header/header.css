@@ -49,8 +49,7 @@ header nav .nav-brand p {
 }
 
 header nav .nav-brand img {
-  max-height: calc(var(--nav-height) - 10px);
-  width: auto;
+  width: 128px;
 }
 
 /* hamburger */
