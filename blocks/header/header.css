@@ -1,8 +1,12 @@
 /* header and nav layout */
+header {
+  height: var(--nav-height-mobile);
+}
+
 header nav {
   display: grid;
   grid-template:
-    'hamburger brand' var(--nav-height)
+    'hamburger brand' var(--nav-height-mobile)
     'sections sections' 1fr / 50px 1fr;
   align-items: center;
   padding: 0 2rem;
@@ -10,17 +14,15 @@ header nav {
   z-index: 3;
   background-color: var(--background-color);
   width: 100vw;
-  height: var(--nav-height);
   box-sizing: border-box;
   font-family: var(--heading-font-family);
-  max-width: 1200px;
 }
 
 header div.header {
   position: fixed;
-  height: var(--nav-height);
   width: 100%;
   z-index: 4;
+  height: var(--nav-height-mobile);
   background-color: var(--background-color);
 }
 
@@ -30,7 +32,7 @@ header nav a:any-link {
 
 header nav[aria-expanded='true'] {
   grid-template:
-    'hamburger brand' var(--nav-height)
+    'hamburger brand' var(--nav-height-mobile)
     'sections sections' 1fr / 50px 1fr;
   overflow-y: scroll;
   min-height: 100vh;
@@ -49,7 +51,8 @@ header nav .nav-brand p {
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 43px;
+  height: 28px;
 }
 
 /* hamburger */
@@ -168,22 +171,51 @@ header nav[aria-expanded='true'] .nav-tools li {
   padding: 0;
 }
 
+header nav::after {
+  content: "★ Honor being honorable ★";
+  display: block;
+  background: var(--link-hover-color);
+  color: white;
+  font-size: var(--body-font-size-xs);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5rem 0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: calc(var(--nav-height-mobile) - 4px);
+  font-weight: bold;
+  z-index: 4;
+}
+
+header nav[aria-expanded='true']::after {
+  visibility: hidden;
+}
+
 /* desktop nav styles */
 @media (min-width: 1000px) {
+  header {
+    height: var(--nav-height);
+  }
+
+  header div.header {
+    height: var(--nav-height);
+  }
+
   header nav {
-    grid-template: 
+    grid-template-areas:
       "nav-tools"
       "nav-items"; 
     display: grid;
     grid-template-columns: 1fr; 
     grid-template-rows: 1fr 1fr; 
     gap: 0 0; 
-    height: var(--nav-height);
     padding: 16px 0;
     z-index: 4;
     left: 0;
     right: 0;
     margin: auto;
+    max-width: 1200px;
   }
 
   header nav .nav-sections > ul > li.nav-drop {
@@ -330,25 +362,13 @@ header nav[aria-expanded='true'] .nav-tools li {
     box-shadow: 0 0 5px var(text-color);
     z-index: 5;
   }
+
+  header nav .nav-brand img {
+    width: 128px;
+    height: 83px;
 }
 
-header nav::after {
-  content: "★ Honor being honorable ★";
-  display: block;
-  background: var(--link-hover-color);
-  color: white;
-  font-size: var(--body-font-size-xs);
-  text-transform: uppercase;
-  text-align: center;
-  padding: 0.5rem 0;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: calc(var(--nav-height) - 4px);
-  font-weight: bold;
-  z-index: 4;
-}
-
-header nav[aria-expanded='true']::after {
-  visibility: hidden;
+  header nav::after {
+    top: calc(var(--nav-height) - 4px);
+  }
 }

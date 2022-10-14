@@ -40,7 +40,7 @@
 
   /* nav height */
   --nav-height: 120px;
-
+  --nav-height-mobile: 40px;
 }
 
 main {
@@ -59,10 +59,6 @@ body {
 
 body.appear {
   display: unset;
-}
-
-header {
-  height: var(--nav-height);
 }
 
 h1, h2, h3,
