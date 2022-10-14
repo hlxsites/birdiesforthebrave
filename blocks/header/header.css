@@ -203,7 +203,7 @@ header nav[aria-expanded='true']::after {
   }
 
   header nav {
-    grid-template-areas:
+    grid-template:
       "nav-tools"
       "nav-items"; 
     display: grid;
