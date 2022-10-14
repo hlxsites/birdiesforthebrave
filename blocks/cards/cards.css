@@ -21,6 +21,9 @@
     bottom: 0;
     width: 100%;
     vertical-align: middle;
+}
+
+.cards.overlay .cards-card-body {
     height: 40%;
 }
 
@@ -28,10 +31,14 @@
     color: var(--background-color);
     text-align: center;
     font-size: var(--heading-font-size-s);
+}
+
+.cards.overlay .cards-card-body * {
     margin: 0 auto;
     position: relative;
     top: 15%;
 }
+
 
 .cards .cards-card-body a {
     text-decoration: none;
