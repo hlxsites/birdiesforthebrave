@@ -258,6 +258,10 @@ main > .section > .default-content-wrapper > p > picture > img {
   }
 }
 
+header {
+  height: var(--nav-height);
+}
+  
 /* progressive section appearance */
 main .section[data-section-status='loading'],
 main .section[data-section-status='initialized'] {

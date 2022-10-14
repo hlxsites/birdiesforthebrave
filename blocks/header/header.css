@@ -1,8 +1,4 @@
 /* header and nav layout */
-header {
-  height: var(--nav-height);
-}
-
 header nav {
   display: grid;
   grid-template:
@@ -20,9 +16,9 @@ header nav {
 
 header div.header {
   position: fixed;
+  height: var(--nav-height);
   width: 100%;
   z-index: 4;
-  height: var(--nav-height);
   background-color: var(--background-color);
 }
 
