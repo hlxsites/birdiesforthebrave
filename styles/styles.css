@@ -38,9 +38,8 @@
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
 
-  /* nav height */
-  --nav-height: 120px;
-  --nav-height-mobile: 40px;
+  /* nav height mobile */
+  --nav-height: 40px;
 }
 
 main {
@@ -250,6 +249,12 @@ main > .section > .default-content-wrapper > p > picture > img {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  :root {
+    --nav-height: 120px;
   }
 }
 

@@ -1,12 +1,12 @@
 /* header and nav layout */
 header {
-  height: var(--nav-height-mobile);
+  height: var(--nav-height);
 }
 
 header nav {
   display: grid;
   grid-template:
-    'hamburger brand' var(--nav-height-mobile)
+    'hamburger brand' var(--nav-height)
     'sections sections' 1fr / 50px 1fr;
   align-items: center;
   padding: 0 2rem;
@@ -22,7 +22,7 @@ header div.header {
   position: fixed;
   width: 100%;
   z-index: 4;
-  height: var(--nav-height-mobile);
+  height: var(--nav-height);
   background-color: var(--background-color);
 }
 
@@ -32,7 +32,7 @@ header nav a:any-link {
 
 header nav[aria-expanded='true'] {
   grid-template:
-    'hamburger brand' var(--nav-height-mobile)
+    'hamburger brand' var(--nav-height)
     'sections sections' 1fr / 50px 1fr;
   overflow-y: scroll;
   min-height: 100vh;
@@ -183,7 +183,7 @@ header nav::after {
   position: fixed;
   width: 100%;
   left: 0;
-  top: calc(var(--nav-height-mobile) - 4px);
+  top: calc(var(--nav-height) - 4px);
   font-weight: bold;
   z-index: 4;
 }
@@ -194,14 +194,6 @@ header nav[aria-expanded='true']::after {
 
 /* desktop nav styles */
 @media (min-width: 1000px) {
-  header {
-    height: var(--nav-height);
-  }
-
-  header div.header {
-    height: var(--nav-height);
-  }
-
   header nav {
     grid-template:
       "nav-tools"
@@ -366,9 +358,5 @@ header nav[aria-expanded='true']::after {
   header nav .nav-brand img {
     width: 128px;
     height: 83px;
-}
-
-  header nav::after {
-    top: calc(var(--nav-height) - 4px);
   }
 }
