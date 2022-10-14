@@ -51,8 +51,8 @@ header nav .nav-brand p {
 }
 
 header nav .nav-brand img {
-  width: 43px;
-  height: 28px;
+  max-height: calc(var(--nav-height) - 10px);
+  width: auto;
 }
 
 /* hamburger */
@@ -353,10 +353,5 @@ header nav[aria-expanded='true']::after {
     padding: 16px;
     box-shadow: 0 0 5px var(text-color);
     z-index: 5;
-  }
-
-  header nav .nav-brand img {
-    width: 128px;
-    height: 83px;
   }
 }
