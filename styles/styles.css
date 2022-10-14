@@ -38,9 +38,8 @@
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
 
-  /* nav height */
-  --nav-height: 120px;
-
+  /* nav height mobile */
+  --nav-height: 40px;
 }
 
 main {
@@ -59,10 +58,6 @@ body {
 
 body.appear {
   display: unset;
-}
-
-header {
-  height: var(--nav-height);
 }
 
 h1, h2, h3,
@@ -257,6 +252,16 @@ main > .section > .default-content-wrapper > p > picture > img {
   }
 }
 
+@media (min-width: 1000px) {
+  :root {
+    --nav-height: 120px;
+  }
+}
+
+header {
+  height: var(--nav-height);
+}
+  
 /* progressive section appearance */
 main .section[data-section-status='loading'],
 main .section[data-section-status='initialized'] {
