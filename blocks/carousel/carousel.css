@@ -294,7 +294,7 @@ main .carousel-buttons button.selected {
 }
 
 @media (max-width: 900px) {
-  main .carousel-buttons  {
+  main .carousel .carousel-buttons  {
     visibility: hidden;
   }
 
@@ -381,23 +381,23 @@ main .carousel.gallery div.gallery-text p.gallery-text-credit {
 
 .carousel-wrapper .carousel-nav {
   position: absolute;
-top: 50%;
-left: 0;
-z-index: 3;
-right: 0;
+  top: 50%;
+  left: 0;
+  z-index: 3;
+  right: 0;
 }
 
 .carousel-wrapper .carousel-next,
 .carousel-wrapper .carousel-prev {
-    height: 40px;
-    width: 40px;
-    border-color: #999;
-    background-color: white;
-    display: block;
-    margin: 10px 8px;
-    padding: 0;
-    border-radius: 50%;
-    z-index: 3;
+  height: 40px;
+  width: 40px;
+  border-color: #999;
+  background-color: white;
+  display: block;
+  margin: 10px 8px;
+  padding: 0;
+  border-radius: 50%;
+  z-index: 3;
 }
 
 .carousel-wrapper .carousel-next {
@@ -409,43 +409,43 @@ right: 0;
 }
 
 .carousel-wrapper .carousel-next::after {
-    content: "";
-    border:1px solid black;
-    transform: rotate(-45deg);
-    display: inline-block;
-    height: 12px;
-    top: -2px;
-    position: relative;
+  content: "";
+  border:1px solid black;
+  transform: rotate(-45deg);
+  display: inline-block;
+  height: 12px;
+  top: -2px;
+  position: relative;
 }
 
 .carousel-wrapper .carousel-next::before {
-    content: "";
-    border:1px solid black;
-    transform: rotate(45deg);
-    top: 7px;
-    left: 2px;
-    display: inline-block;
-    height: 12px;
-    position: relative;
+  content: "";
+  border:1px solid black;
+  transform: rotate(45deg);
+  top: 7px;
+  left: 2px;
+  display: inline-block;
+  height: 12px;
+  position: relative;
 }
 
 .carousel-wrapper .carousel-prev::after {
-    content: "";
-    border:1px solid black;
-    transform: rotate(45deg);
-    display: inline-block;
-    height: 12px;
-    top: -2px;
-    position: relative;
+  content: "";
+  border:1px solid black;
+  transform: rotate(45deg);
+  display: inline-block;
+  height: 12px;
+  top: -2px;
+  position: relative;
 }
 
 .carousel-wrapper .carousel-prev::before {
-    content: "";
-    border:1px solid black;
-    transform: rotate(-45deg);
-    top: 7px;
-    left: 2px;
-    display: inline-block;
-    height: 12px;
-    position: relative;
+  content: "";
+  border:1px solid black;
+  transform: rotate(-45deg);
+  top: 7px;
+  left: 2px;
+  display: inline-block;
+  height: 12px;
+  position: relative;
 }
