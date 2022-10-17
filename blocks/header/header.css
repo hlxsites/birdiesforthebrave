@@ -10,10 +10,8 @@ header nav {
   z-index: 3;
   background-color: var(--background-color);
   width: 100vw;
-  height: var(--nav-height);
   box-sizing: border-box;
   font-family: var(--heading-font-family);
-  max-width: 1200px;
 }
 
 header div.header {
@@ -49,7 +47,8 @@ header nav .nav-brand p {
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  max-height: calc(var(--nav-height) - 10px);
+  width: auto;
 }
 
 /* hamburger */
@@ -168,22 +167,43 @@ header nav[aria-expanded='true'] .nav-tools li {
   padding: 0;
 }
 
+header nav::after {
+  content: "★ Honor being honorable ★";
+  display: block;
+  background: var(--link-hover-color);
+  color: white;
+  font-size: var(--body-font-size-xs);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5rem 0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: calc(var(--nav-height) - 4px);
+  font-weight: bold;
+  z-index: 4;
+}
+
+header nav[aria-expanded='true']::after {
+  visibility: hidden;
+}
+
 /* desktop nav styles */
 @media (min-width: 1000px) {
   header nav {
-    grid-template: 
+    grid-template:
       "nav-tools"
       "nav-items"; 
     display: grid;
     grid-template-columns: 1fr; 
     grid-template-rows: 1fr 1fr; 
     gap: 0 0; 
-    height: var(--nav-height);
     padding: 16px 0;
     z-index: 4;
     left: 0;
     right: 0;
     margin: auto;
+    max-width: 1200px;
   }
 
   header nav .nav-sections > ul > li.nav-drop {
@@ -330,25 +350,4 @@ header nav[aria-expanded='true'] .nav-tools li {
     box-shadow: 0 0 5px var(text-color);
     z-index: 5;
   }
-}
-
-header nav::after {
-  content: "★ Honor being honorable ★";
-  display: block;
-  background: var(--link-hover-color);
-  color: white;
-  font-size: var(--body-font-size-xs);
-  text-transform: uppercase;
-  text-align: center;
-  padding: 0.5rem 0;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: calc(var(--nav-height) - 4px);
-  font-weight: bold;
-  z-index: 4;
-}
-
-header nav[aria-expanded='true']::after {
-  visibility: hidden;
 }
