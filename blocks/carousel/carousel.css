@@ -308,6 +308,10 @@ main .carousel-buttons button.selected {
 }
 
 @media (max-width: 900px) {
+  main .carousel .carousel-buttons  {
+    visibility: hidden;
+  }
+
   main .carousel-nav {
     visibility: hidden;
   }
