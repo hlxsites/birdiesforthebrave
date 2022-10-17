@@ -64,6 +64,9 @@
 
 .cards-wrapper {
     margin: auto;
+    display: grid;
+    grid-template-areas: "cards"
+        "buttons";
 }
 
 .default-content-wrapper {
@@ -74,6 +77,7 @@
     display: flex;
     align-items: center;
     border-left: 1px solid #999;
+    grid-area: buttons;
 }
 
 @media (min-width: 768px) {
