@@ -86,63 +86,42 @@
     }
 }
 
-
-.cards-wrapper .carousel-buttons .carousel-next,
-.cards-wrapper .carousel-buttons .carousel-prev {
-    height: 40px;
-    width: 40px;
-    border-color: #999;
-}
-
-.cards-wrapper .carousel-buttons .carousel-next::after {
-    content: "";
-    border:1px solid black;
-    transform: rotate(-45deg);
-    display: inline-block;
-    height: 12px;
-    top: -2px;
-    position: relative;
-}
-
-.cards-wrapper .carousel-buttons .carousel-next::before {
-    content: "";
-    border:1px solid black;
-    transform: rotate(45deg);
-    top: 7px;
-    left: 2px;
-    display: inline-block;
-    height: 12px;
-    position: relative;
-}
-
-.cards-wrapper .carousel-buttons .carousel-prev::after {
-    content: "";
-    border:1px solid black;
-    transform: rotate(45deg);
-    display: inline-block;
-    height: 12px;
-    top: -2px;
-    position: relative;
-}
-
-.cards-wrapper .carousel-buttons .carousel-prev::before {
-    content: "";
-    border:1px solid black;
-    transform: rotate(-45deg);
-    top: 7px;
-    left: 2px;
-    display: inline-block;
-    height: 12px;
-    position: relative;
-}
-
 .cards-wrapper .carousel-buttons::before {
     content: "";
     border-right: 1px solid #999;
     display: inline-block;
     height: 60px;
     position: relative;
-    left: 55px;
+    left: 72px;
+}
+
+.cards-wrapper .carousel-buttons :is(.carousel-prev, .carousel-next) {
+    height: 40px;
+    width: 40px;
+    border: 1px solid #999;
+    background-color: white;
+    display: block;
+    margin: 10px 16px;
+    padding: 0;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.cards-wrapper .carousel-buttons :is(.carousel-prev, .carousel-next) svg {
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+.cards-wrapper .carousel-buttons .carousel-prev svg {
+    transform: rotate(180deg);
+    left: -8px;
+    top: -1px;
+}
+
+.cards-wrapper .carousel-buttons .carousel-next svg {
+    top: -1px;
+    left: 6px;
 }
 
 .cards.icons ul {

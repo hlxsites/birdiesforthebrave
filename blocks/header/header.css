@@ -127,7 +127,7 @@ header nav .nav-sections ul  {
   font-weight: 500;
   list-style: none;
   padding-left: 0;
-} 
+}
 
 header nav .nav-sections li {
   font-size: 20px;
@@ -144,7 +144,7 @@ header nav .nav-tools {
   grid-area: tools;
   flex: 0 0 auto;
   display: none;
-} 
+}
 
 header nav[aria-expanded='true'] .nav-tools {
   display: block;
@@ -169,19 +169,21 @@ header nav[aria-expanded='true'] .nav-tools li {
 
 header nav::after {
   content: "★ Honor being honorable ★";
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--link-hover-color);
   color: white;
   font-size: var(--body-font-size-xs);
   text-transform: uppercase;
   text-align: center;
-  padding: 0.5rem 0;
   position: fixed;
   width: 100%;
   left: 0;
   top: calc(var(--nav-height) - 4px);
   font-weight: bold;
   z-index: 4;
+  height: var(--nav-banner-height);
 }
 
 header nav[aria-expanded='true']::after {
@@ -193,11 +195,11 @@ header nav[aria-expanded='true']::after {
   header nav {
     grid-template:
       "nav-tools"
-      "nav-items"; 
+      "nav-items";
     display: grid;
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 0 0; 
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0 0;
     padding: 16px 0;
     z-index: 4;
     left: 0;
@@ -279,7 +281,7 @@ header nav[aria-expanded='true']::after {
     margin: 0;
     text-transform: uppercase;
   }
-  
+
   header nav[aria-expanded='true'] .nav-sections ol {
     display: flex;
     min-height: unset;
@@ -334,7 +336,7 @@ header nav[aria-expanded='true']::after {
     height: 0;
     position: absolute;
     border-left: 15px solid transparent;
-    border-right: 15px solid transparent;    
+    border-right: 15px solid transparent;
     border-bottom: 15px solid var(--background-color);
     top: -15px;
     left: 20px;

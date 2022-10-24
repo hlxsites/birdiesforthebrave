@@ -1,4 +1,4 @@
-import { createOptimizedPicture } from '../../scripts/scripts.js';
+import { createOptimizedPicture, decorateIcons } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const buttons = document.createElement('div');
@@ -49,6 +49,7 @@ export default function decorate(block) {
   // next and previous buttons for carousel-style cards
   if (block.classList.contains('icons')) {
     const next = document.createElement('button');
+    next.innerHTML = '<span class="icon icon-arrow"/>';
     next.className = 'carousel-next';
     next.onclick = () => {
       const selected = buttons.querySelector('.selected');
@@ -58,7 +59,7 @@ export default function decorate(block) {
       }
       nextnext.click();
     };
-    const prev = document.createElement('button');
+    const prev = next.cloneNode(true);
     prev.className = 'carousel-prev';
     prev.onclick = () => {
       const selected = buttons.querySelector('.selected');
@@ -71,5 +72,6 @@ export default function decorate(block) {
 
     buttons.prepend(prev, next);
     block.parentElement.prepend(buttons);
+    decorateIcons(buttons);
   }
 }
