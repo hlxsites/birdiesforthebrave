@@ -1,3 +1,5 @@
+import { decorateIcons } from '../../scripts/scripts.js';
+
 /**
  * Returns the "mirror" element of a list of sibling elements. The
  * parent of the element is assumed to have an even list of children.
@@ -66,12 +68,14 @@ export default async function decorate(block) {
 
   const next = document.createElement('button');
   next.className = 'carousel-next';
+  next.innerHTML = '<span class="icon icon-arrow"/>';
 
-  const prev = document.createElement('button');
+  const prev = next.cloneNode(true);
   prev.className = 'carousel-prev';
 
   buttons.append(prev, next);
   block.parentElement.prepend(buttons);
+  decorateIcons(buttons);
 
   const autoScroll = !block.classList.contains('stopped');
   if (autoScroll) {

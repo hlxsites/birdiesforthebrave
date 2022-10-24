@@ -1,4 +1,4 @@
-import { readBlockConfig } from '../../scripts/scripts.js';
+import { readBlockConfig, decorateIcons } from '../../scripts/scripts.js';
 
 async function insertGallerySlides(block) {
   const damPrefix = 'https://www.pgatour.com';
@@ -57,6 +57,7 @@ export default async function decorate(block) {
   nav.className = 'carousel-nav';
 
   const next = document.createElement('button');
+  next.innerHTML = '<span class="icon icon-arrow"/>';
   next.className = 'carousel-next';
   next.onclick = () => {
     let current = buttons.querySelector('.selected') || buttons.firstElementChild;
@@ -68,7 +69,7 @@ export default async function decorate(block) {
     current.click();
   };
 
-  const prev = document.createElement('button');
+  const prev = next.cloneNode(true);
   prev.className = 'carousel-prev';
   prev.onclick = () => {
     let current = buttons.querySelector('.selected') || buttons.firstElementChild;
@@ -81,4 +82,17 @@ export default async function decorate(block) {
   };
   nav.append(prev, next);
   block.parentElement.prepend(nav);
+  decorateIcons(nav);
+
+  if (!blockClasses.includes('course') && !blockClasses.includes('gallery')) {
+    const truncateDescription = () => {
+      block.querySelectorAll('.carousel-text').forEach((textEl) => {
+        const descriptionEl = textEl.querySelector('p:nth-child(3)');
+        descriptionEl.classList.toggle('is-truncated', textEl.clientHeight > block.clientHeight);
+      });
+    };
+
+    requestAnimationFrame(truncateDescription);
+    window.addEventListener('resize', truncateDescription);
+  }
 }
