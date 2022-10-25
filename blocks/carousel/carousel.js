@@ -44,11 +44,11 @@ export default async function decorate(block) {
     /* buttons */
     const button = document.createElement('button');
     if (!i) button.classList.add('selected');
-    button.addEventListener('click', () => {
+    button.onclick = () => {
       block.scrollTo({ top: 0, left: row.offsetLeft - row.parentNode.offsetLeft, behavior: 'smooth' });
       [...buttons.children].forEach((r) => r.classList.remove('selected'));
       button.classList.add('selected');
-    });
+    };
     buttons.append(button);
   });
   block.parentElement.prepend(buttons);
@@ -85,8 +85,21 @@ export default async function decorate(block) {
   decorateIcons(nav);
 
   if (!blockClasses.includes('course') && !blockClasses.includes('gallery')) {
+    const carouselTextItems = block.querySelectorAll('.carousel-text');
+
+    carouselTextItems.forEach((textEl, i) => {
+      const buttonsClone = buttons.cloneNode(true);
+      buttonsClone.querySelectorAll('button').forEach((button, k) => {
+        button.classList.remove('selected');
+        button.onclick = buttons.querySelector(`button:nth-child(${k + 1})`).onclick;
+      });
+      buttonsClone.querySelector(`button:nth-child(${i + 1})`).classList.add('selected');
+
+      textEl.append(buttonsClone);
+    });
+
     const truncateDescription = () => {
-      block.querySelectorAll('.carousel-text').forEach((textEl) => {
+      carouselTextItems.forEach((textEl) => {
         const descriptionEl = textEl.querySelector('p:nth-child(3)');
         descriptionEl.classList.toggle('is-truncated', textEl.clientHeight > block.clientHeight);
       });
