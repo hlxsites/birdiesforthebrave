@@ -169,6 +169,9 @@ div.carousel-text h1, div.carousel-text h2 {
   font-family: var(--heading-font-family);
   font-weight: bold;
   width: 100%;
+  border-bottom: none;
+  line-height: 30px;
+  margin: 0;
 }
 
 main .carousel div.carousel-text h2 {
@@ -210,6 +213,9 @@ div.carousel-text p {
 }
 
 div.carousel-text p:first-of-type {
+  font-family: var(--heading-font-family);
+  padding-bottom: 15px;
+  margin-bottom: 0;
   color: var(--link-color);
   font-size: 18px;
   width: 100%;
@@ -238,6 +244,7 @@ main .carousel p.button-container {
   width: 100%;
   font-weight: lighter;
   text-align: left;
+  margin: 0;
 }
 
 main .carousel a.button {
@@ -285,15 +292,21 @@ main .carousel-wrapper .carousel-buttons {
   position: absolute;
   left: 0;
   margin-left: 2em;
-  bottom: 1em;
+  bottom: 0;
   text-align: center;
   z-index: 3;
 }
 
 @media (min-width: 900px) {
   main .carousel-wrapper .carousel-buttons {
-    left: 200px;
-    bottom: 2em;
+    position: static;
+    justify-content: flex-start;
+    margin: 0;
+    width: 100%;
+  }
+
+  main .carousel-wrapper > .carousel-buttons {
+    display: none;
   }
 }
 
