@@ -50,6 +50,19 @@ footer {
   text-decoration: underline;
 }
 
+.footer div:nth-child(2) ul li a#ot-sdk-btn.ot-sdk-show-settings {
+  height: unset;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.footer div:nth-child(2) ul li a#ot-sdk-btn.ot-sdk-show-settings:hover {
+  background-color: unset;
+}
+
 .footer div:nth-child(2) p a[href^="mailto:"] {
   font-weight: bold;
   color: var(--text-color);

@@ -1,10 +1,19 @@
 import { readBlockConfig, decorateIcons } from '../../scripts/scripts.js';
 
+function setupCookieChoices(section) {
+  const cookieLink = section.querySelector('a[href*="onetrust-link"]');
+  if (cookieLink) {
+    cookieLink.removeAttribute('href');
+    cookieLink.className = 'ot-sdk-show-settings';
+    cookieLink.id = 'ot-sdk-btn';
+    cookieLink.parentNode.className = 'onetrust-link';
+  }
+}
+
 /**
  * loads and decorates the footer
  * @param {Element} block The header block element
  */
-
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
   block.textContent = '';
@@ -24,13 +33,12 @@ export default async function decorate(block) {
     template.firstElementChild.lastChild.remove();
   }
   legal.append(template.firstElementChild);
+  setupCookieChoices(legal);
 
   const social = document.createElement('div');
   social.append(template.firstElementChild);
 
-  footer.append(logo);
-  footer.append(legal);
-  footer.append(social);
+  footer.append(logo, legal, social);
 
   block.append(footer);
 
