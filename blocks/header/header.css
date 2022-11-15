@@ -9,7 +9,7 @@ header nav {
   position: fixed;
   z-index: 3;
   background-color: var(--background-color);
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
   font-family: var(--heading-font-family);
 }
