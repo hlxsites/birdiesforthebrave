@@ -1,5 +1,5 @@
 footer {
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
   background-color: #f2f2f2;
   font-size: var(--body-font-size-xs);
@@ -28,19 +28,28 @@ footer {
   flex: 1;
 }
 
-.footer div:first-of-type {
-  flex: 0;
-  padding-left: 0;
-}
-
+.footer div:first-of-type,
 .footer div:last-of-type {
   flex: 0;
-  padding-right: 0;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 0 16px;
+  }
+
+  .footer div:first-of-type {
+    padding-left: 0;
+  }
+  
+  .footer div:last-of-type {
+    padding-right: 0;
+  }
 }
 
 .footer div:nth-child(2) :is(ul,p) {
   display: flex;
-  gap: 8px;
+  gap: 0 8px;
   flex-direction: column;
   text-align: center;
 }
@@ -102,6 +111,7 @@ footer {
 @media (min-width: 768px) {
   .footer div:nth-child(2) ul {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
   }
 
