@@ -110,8 +110,7 @@ footer {
 
 @media (min-width: 768px) {
   .footer div:nth-child(2) ul {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
   }
 
