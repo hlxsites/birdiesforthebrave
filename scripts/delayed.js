@@ -35,7 +35,6 @@ function getCookie(cookieName) {
   return null;
 }
 
-
 const pageType = window.location.pathname === '/' ? 'homePage' : 'contentPage';
 
 const pname = window.location.pathname.split('/').pop();
