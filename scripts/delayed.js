@@ -85,8 +85,8 @@ async function OptanonWrapper() {
   const prevOptIn = localStorage.getItem('OptIn_PreviousPermissions');
   if (prevOptIn) {
     try {
-      const adobeSettings = JSON.parse(prevOptIn);
-      if (adobeSettings.tempImplied) {
+      const settings = JSON.parse(prevOptIn);
+      if (settings.tempImplied) {
         localStorage.removeItem('OptIn_PreviousPermissions');
       }
     } catch (e) {
@@ -94,16 +94,30 @@ async function OptanonWrapper() {
       console.error('OptIn_PreviousPermissions parse failed');
     }
   }
-
-  loadScript(`https://assets.adobedtm.com/d17bac9530d5/90b3c70cfef1/launch-1ca88359b76c${isProd ? '.min' : ''}.js`, () => {
-    dispatchEvent(new Event('load'));
-  });
+  dispatchEvent(new Event('load'));
 }
 
 const otId = placeholders.onetrustId;
 if (otId) {
   const cookieScript = loadScript('https://cdn.cookielaw.org/scripttemplates/otSDKStub.js');
   cookieScript.setAttribute('data-domain-script', `${otId}${isProd ? '' : '-test'}`);
+  cookieScript.setAttribute('data-dlayer-name', 'dataLayer');
+  cookieScript.setAttribute('data-nscript', 'beforeInteractive');
 
+  const gtmId = placeholders.googletagmanagerId;
+  if (gtmId) {
+    const GTMScript = document.createElement('script');
+    GTMScript.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','${gtmId}');`;
+    document.head.append(GTMScript);
+
+    const GTMFrame = document.createElement('no-script');
+    GTMFrame.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtmId}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
+    document.body.prepend(GTMFrame);
+  }
   window.OptanonWrapper = OptanonWrapper;
 }
