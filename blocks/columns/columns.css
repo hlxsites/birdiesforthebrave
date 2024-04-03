@@ -10,6 +10,7 @@ div.columns h2 {
   div.columns > div {
     display: flex;
     flex-direction: row;
+    gap: 20px;
   }
 }
 
