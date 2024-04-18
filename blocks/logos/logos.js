@@ -69,9 +69,11 @@ export default async function decorate(block) {
   const next = document.createElement('button');
   next.className = 'carousel-next';
   next.innerHTML = '<span class="icon icon-arrow"/>';
+  next.setAttribute('aria-label', 'Next logo');
 
   const prev = next.cloneNode(true);
   prev.className = 'carousel-prev';
+  prev.setAttribute('aria-label', 'Previous logo');
 
   buttons.append(prev, next);
   block.parentElement.prepend(buttons);
