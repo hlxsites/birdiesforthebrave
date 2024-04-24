@@ -128,9 +128,7 @@ if (otId) {
 function loadAdmiral() {
   const fetchScript = async () => {
     try {
-      const response = await fetch(
-          'https://orchestrator-config-uat.pgatour.com/revops/admirial',
-      );
+      const response = await fetch('https://orchestrator-config-uat.pgatour.com/revops/admirial',);
       const content = await response.text();
       const script = document.createElement('script');
       script.type = 'text/javascript';
