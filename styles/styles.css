@@ -12,13 +12,25 @@
 
 :root {
   /* colors */
-  --link-color: #005aa6;
-  --link-hover-color: #e70e18;
-  --background-color: #fff;
-  --overlay-background-color: #e70e18;
-  --highlight-background-color: #005aa6;
-  --text-color: #000;
-  --line-color: #b3b3b3;
+  --color-white: #fff;
+  --color-red-10: #e70e18;
+  --color-light-gray: #f7f7f7;
+  --color-light-gray-10: #f2f2f2;
+  --color-gray: #999;
+  --color-gray-10: #bebebe;
+  --color-gray-20: #b3b3b3;
+  --color-transparent: #0008;
+  --color-blue: #005aa6;
+  --color-black: #000;
+
+  /* element colors used */
+  --link-color: var(--color-blue);
+  --link-hover-color: var(--color-red-10);
+  --background-color: var(--color-white);
+  --overlay-background-color: var(--color-red-10);
+  --highlight-background-color: var(--color-blue);
+  --text-color: var(--color-black);
+  --line-color: var(--color-gray-20);
 
   /* fonts */
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;

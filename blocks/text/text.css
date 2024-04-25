@@ -5,8 +5,8 @@
 }
 
 div .text.bluebox {
-  background-color: #005aa6;
-  color: #fff;
+  background-color: var(--color-blue);
+  color: var(--color-white);
   padding: 0.8em;
   text-align: center;
   font-weight: bold;

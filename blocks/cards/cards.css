@@ -42,7 +42,7 @@
 
 .cards .cards-card-body a {
     text-decoration: none;
-    color: #fff;
+    color: var(--color-white);
     display: inline-block;
     text-transform: uppercase;
     font-family: 'Arial Narrow', sans-serif;
@@ -76,7 +76,7 @@
 .cards-wrapper .carousel-buttons {
     display: flex;
     align-items: center;
-    border-left: 1px solid #999;
+    border-left: 1px solid var(--color-gray);
     grid-area: buttons;
 }
 
@@ -88,7 +88,7 @@
 
 .cards-wrapper .carousel-buttons::before {
     content: "";
-    border-right: 1px solid #999;
+    border-right: 1px solid var(--color-gray);
     display: inline-block;
     height: 60px;
     position: relative;
@@ -98,7 +98,7 @@
 .cards-wrapper .carousel-buttons :is(.carousel-prev, .carousel-next) {
     height: 40px;
     width: 40px;
-    border: 1px solid #999;
+    border: 1px solid var(--color-gray);
     background-color: white;
     display: block;
     margin: 10px 16px;
@@ -154,9 +154,9 @@
 
 .cards.overlay .callout-overlay a {
     transition: width 250ms ease, background-color 250ms ease, border-color 250ms ease, color 250ms ease, padding 250ms ease, margin 250ms ease;
-    background: #fff;
-    border: 1px solid #e70e18;
-    color: #e70e18;
+    background: var(--color-white);
+    border: 1px solid var(--color-red-10);
+    color: var(--color-red-10);
     display: inline-block;
     font-family: Arial, sans-serif;
     font-weight: 700;
@@ -178,9 +178,9 @@
 }
 
 .cards.overlay .callout-overlay a:hover {
-    background: #e70e18;
-    border-color: #e70e18;
-    color: #fff;
+    background: var(--color-red-10);
+    border-color: var(--color-red-10);
+    color: var(--color-white);
     text-decoration: none
 }
 
@@ -191,7 +191,7 @@ main .cards.icons ul::-webkit-scrollbar {
 .cards.icons li {
     flex: 1 1 0px;
     padding-left: 20px;
-    border-left: 1px solid #999;
+    border-left: 1px solid var(--color-gray);
 }
 
 @media (max-width: 768px) {
