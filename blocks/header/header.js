@@ -39,6 +39,14 @@ export default async function decorate(block) {
       if (section) section.classList.add(`nav-${e}`);
     });
 
+    const navBrand = [...nav.children][0];
+    if (navBrand) {
+      const img = navBrand.querySelector('img');
+      if (img && !img.alt) {
+        img.alt = 'Birdies for the Brave';
+      }
+    }
+
     const navSections = [...nav.children][1];
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {

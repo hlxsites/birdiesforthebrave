@@ -34,6 +34,7 @@ export default function decorate(block) {
 
     /* buttons for carousel-style cards */
     const button = document.createElement('button');
+    button.setAttribute('aria-label', `Card ${i + 1}`);
     if (!i) button.classList.add('selected');
     button.addEventListener('click', () => {
       ul.scrollTo({ top: 0, left: li.offsetLeft - li.parentNode.offsetLeft, behavior: 'smooth' });
@@ -51,6 +52,7 @@ export default function decorate(block) {
     const next = document.createElement('button');
     next.innerHTML = '<span class="icon icon-arrow"/>';
     next.className = 'carousel-next';
+    next.setAttribute('aria-label', 'Next card');
     next.onclick = () => {
       const selected = buttons.querySelector('.selected');
       let nextnext = selected.nextElementSibling;
@@ -61,6 +63,7 @@ export default function decorate(block) {
     };
     const prev = next.cloneNode(true);
     prev.className = 'carousel-prev';
+    prev.setAttribute('aria-label', 'Previous card');
     prev.onclick = () => {
       const selected = buttons.querySelector('.selected');
       let prevprev = selected.previousElementSibling;

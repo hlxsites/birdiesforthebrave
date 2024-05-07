@@ -13,7 +13,9 @@
 }
 
 .cards .cards-card-body {
+    box-sizing: border-box;
     margin: 16px;
+    padding: 0 16px;
     margin: 0;
     position: absolute;
     background-color: var(--link-color);
@@ -31,6 +33,11 @@
     color: var(--background-color);
     text-align: center;
     font-size: var(--heading-font-size-s);
+}
+
+.cards .cards-card-body > strong {
+  display: block;
+  line-height: 1.25;
 }
 
 .cards.overlay .cards-card-body * {

@@ -43,6 +43,7 @@ export default async function decorate(block) {
     });
     /* buttons */
     const button = document.createElement('button');
+    button.setAttribute('aria-label', `Slide ${i + 1}`);
     if (!i) button.classList.add('selected');
     button.onclick = () => {
       block.scrollTo({ top: 0, left: row.offsetLeft - row.parentNode.offsetLeft, behavior: 'smooth' });
